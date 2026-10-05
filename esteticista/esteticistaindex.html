@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helena Valença | Estética & Bem-Estar (Modelo de Portfólio)</title>
+    
+    <!-- TAG PARA NÃO INDEXAR NO GOOGLE (Ideal para amostras) -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#F9F8F6',        // Fundo principal (off-white quente)
+                            bgAlt: '#F0EFEB',     // Fundo alternativo (areia)
+                            primary: '#32362E',   // Verde oliva muito escuro / quase grafite
+                            accent: '#C5B9A5',    // Bege suave / Dourado envelhecido
+                            text: '#292524',      // Texto escuro
+                            muted: '#78716C',     // Texto secundário
+                            border: '#E5E5E5'     // Bordas suaves
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'], // Elegante, premium, editorial
+                        sans: ['Montserrat', 'sans-serif']      // Clean, moderna, legível
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #F9F8F6;
+        }
+        
+        ::selection {
+            background-color: #C5B9A5;
+            color: #fff;
+        }
+
+        .image-reveal {
+            transition: transform 0.7s ease, opacity 0.7s ease;
+        }
+        .group:hover .image-reveal {
+            transform: scale(1.03);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F8F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5B9A5;
+            border-radius: 10px;
+        }
+
+        .hairline {
+            height: 1px;
+            background-color: rgba(41, 37, 36, 0.1);
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-text antialiased selection:bg-brand-accent selection:text-white">
+
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-bg/90 backdrop-blur-md border-b border-brand-border/50" id="header">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex flex-col items-center group">
+                <span class="font-serif text-2xl tracking-[0.15em] font-medium text-brand-primary uppercase">Helena Valença</span>
+                <span class="text-[9px] tracking-[0.3em] text-brand-muted uppercase mt-1">Estética & Bem-Estar</span>
+            </a>
+            
+            <!-- Navegação Desktop -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#filosofia" class="text-xs font-medium tracking-[0.15em] text-brand-muted hover:text-brand-primary uppercase transition-colors">Filosofia</a>
+                <a href="#procedimentos" class="text-xs font-medium tracking-[0.15em] text-brand-muted hover:text-brand-primary uppercase transition-colors">Procedimentos</a>
+                <a href="#experiencia" class="text-xs font-medium tracking-[0.15em] text-brand-muted hover:text-brand-primary uppercase transition-colors">A Experiência</a>
+            </nav>
+
+            <!-- CTA Desktop -->
+            <div class="hidden md:block">
+                <!-- 🔄 TROCAR LINK: Substitua o "#" pelo link do WhatsApp -->
+                <a href="#" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center justify-center border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-8 py-3 text-xs font-medium tracking-[0.15em] uppercase transition-all duration-300">
+                    Agendar Avaliação
+                </a>
+            </div>
+
+            <!-- Menu Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-brand-primary text-2xl focus:outline-none" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-24 left-0 w-full bg-brand-bg border-b border-brand-border/50 p-6 flex flex-col gap-6 shadow-xl">
+            <a href="#filosofia" class="text-sm font-medium tracking-[0.15em] text-brand-primary uppercase border-b border-brand-border pb-4">Filosofia</a>
+            <a href="#procedimentos" class="text-sm font-medium tracking-[0.15em] text-brand-primary uppercase border-b border-brand-border pb-4">Procedimentos</a>
+            <a href="#experiencia" class="text-sm font-medium tracking-[0.15em] text-brand-primary uppercase border-b border-brand-border pb-4">A Experiência</a>
+            <!-- 🔄 TROCAR LINK: WhatsApp Mobile -->
+            <a href="#" target="_blank" rel="noopener noreferrer" 
+                class="inline-flex items-center justify-center bg-brand-primary text-white px-8 py-4 text-xs font-medium tracking-[0.15em] uppercase w-full">
+                Agendar Avaliação
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative min-h-screen flex items-center pt-24 overflow-hidden bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Texto Hero -->
+                <div class="space-y-8 z-10 py-12 lg:py-0">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-[1px] bg-brand-accent"></div>
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-brand-muted font-medium">Clínica de Estética Avançada</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.1] text-brand-primary font-light">
+                        A beleza de <br>ser exatamente <br><span class="italic text-brand-accent">quem você é.</span>
+                    </h1>
+                    
+                    <p class="text-brand-muted font-light leading-relaxed max-w-md text-sm sm:text-base">
+                        Protocolos faciais e corporais embasados em ciência, projetados para realçar a sua saúde estética com naturalidade, precisão e um toque de aconchego.
+                    </p>
+                    
+                    <div class="pt-4 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                        <!-- 🔄 TROCAR LINK: WhatsApp Hero -->
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                           class="bg-brand-primary text-white hover:bg-brand-text px-10 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all duration-300 flex items-center gap-3 w-full sm:w-auto justify-center">
+                            Agendar Avaliação
+                        </a>
+                        <a href="#procedimentos" class="text-xs font-medium tracking-[0.15em] text-brand-primary uppercase hover:text-brand-accent transition-colors flex items-center gap-2">
+                            Ver Procedimentos <i class="fa-solid fa-arrow-down-long text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagem Hero -->
+                <div class="relative h-[60vh] lg:h-[85vh] w-full">
+                    <div class="absolute inset-0 bg-brand-accent/10 translate-x-4 translate-y-4 rounded-t-full"></div>
+                    
+                    <!-- 🔄 TROCAR IMAGEM: Foto principal (Hero) -->
+                    <div class="relative w-full h-full rounded-t-full overflow-hidden">
+                        <img src="https://placehold.co/800x1200/EBE8E2/57534E?text=Estética+Clean+Beauty" 
+                             alt="Cuidados estéticos faciais" 
+                             class="w-full h-full object-cover object-center image-reveal">
+                    </div>
+                    
+                    <div class="absolute bottom-12 -left-6 lg:-left-12 bg-white/80 backdrop-blur-sm p-6 shadow-xl max-w-[200px] border border-brand-border/50">
+                        <p class="font-serif text-3xl text-brand-primary mb-1">10+</p>
+                        <p class="text-[9px] uppercase tracking-widest text-brand-muted leading-tight">Anos de experiência em estética avançada</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="filosofia" class="py-32 bg-white relative">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+                
+                <!-- 🔄 TROCAR IMAGEM: Foto da Profissional -->
+                <div class="md:col-span-5 relative group">
+                    <div class="aspect-[3/4] overflow-hidden bg-brand-bg relative">
+                        <img src="https://placehold.co/600x800/D4C9C1/32362E?text=Foto+Profissional" 
+                             alt="Helena Valença - Esteticista" 
+                             class="w-full h-full object-cover image-reveal">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-bg -z-10"></div>
+                </div>
+
+                <div class="md:col-span-7 space-y-8 lg:pl-12">
+                    <span class="text-[10px] uppercase tracking-[0.3em] text-brand-accent font-semibold block">A Profissional</span>
+                    
+                    <h2 class="font-serif text-4xl lg:text-5xl text-brand-primary font-light leading-tight">
+                        Cuidado pautado na ciência, <br><span class="italic text-brand-muted">focado na sua essência.</span>
+                    </h2>
+                    
+                    <div class="space-y-6 text-brand-muted font-light leading-relaxed text-sm md:text-base">
+                        <!-- 🔄 TROCAR TEXTO: Apresentação da profissional -->
+                        <p>
+                            Sou Helena Valença, especialista em Cosmetologia e Estética Avançada. Acredito que a verdadeira beleza não reside em transformações drásticas, mas no resgate da saúde da sua pele e no cuidado com o seu corpo.
+                        </p>
+                        <p>
+                            Cada protocolo realizado em minha clínica é único. Avaliamos suas necessidades de forma integral para elaborar um plano de tratamento que entregue resultados reais, duradouros e que respeitem a harmonia natural dos seus traços.
+                        </p>
+                    </div>
+                    
+                    <div class="pt-6">
+                        <!-- 🔄 TROCAR IMAGEM: Assinatura ou remover bloco -->
+                        <img src="https://placehold.co/200x80/FAFAF9/C5B9A5?text=Assinatura+Helena" alt="Assinatura" class="h-12 opacity-80 mix-blend-multiply">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="procedimentos" class="py-32 bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <div class="text-center max-w-2xl mx-auto space-y-6 mb-20">
+                    <span class="text-[10px] uppercase tracking-[0.3em] text-brand-accent font-semibold">Portfólio de Cuidados</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl text-brand-primary font-light">Procedimentos Assinatura</h2>
+                    <p class="text-brand-muted font-light text-sm">Alta tecnologia e cosmetologia premium aliados a técnicas manuais exclusivas para resultados de excelência.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                    
+                    <!-- Serviço 1: Facial -->
+                    <a href="#" class="group block">
+                        <div class="aspect-[4/5] overflow-hidden bg-brand-bgAlt relative mb-6">
+                            <!-- 🔄 TROCAR IMAGEM: Serviço 1 -->
+                            <img src="https://placehold.co/600x750/EBE8E2/57534E?text=Limpeza+de+Pele" alt="Cuidados Faciais" class="w-full h-full object-cover image-reveal">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        </div>
+                        <div class="text-center space-y-2">
+                            <!-- 🔄 TROCAR TEXTOS: Títulos e Descrições -->
+                            <span class="text-[9px] uppercase tracking-[0.2em] text-brand-accent">Estética Facial</span>
+                            <h3 class="font-serif text-2xl text-brand-primary font-normal">Limpeza de Pele Profunda</h3>
+                            <p class="text-brand-muted font-light text-xs leading-relaxed max-w-xs mx-auto">Higienização minuciosa com extração cuidadosa e reposição de nutrientes para uma pele viçosa e saudável.</p>
+                        </div>
+                    </a>
+
+                    <!-- Serviço 2: Rejuvenescimento -->
+                    <a href="#" class="group block lg:-translate-y-12">
+                        <div class="aspect-[4/5] overflow-hidden bg-brand-bgAlt relative mb-6">
+                            <!-- 🔄 TROCAR IMAGEM: Serviço 2 -->
+                            <img src="https://placehold.co/600x750/D4C9C1/32362E?text=Microagulhamento" alt="Rejuvenescimento" class="w-full h-full object-cover image-reveal">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        </div>
+                        <div class="text-center space-y-2">
+                            <span class="text-[9px] uppercase tracking-[0.2em] text-brand-accent">Alta Performance</span>
+                            <h3 class="font-serif text-2xl text-brand-primary font-normal">Microagulhamento</h3>
+                            <p class="text-brand-muted font-light text-xs leading-relaxed max-w-xs mx-auto">Estímulo de colágeno avançado para tratamento de cicatrizes, linhas finas e melhora global da textura da pele.</p>
+                        </div>
+                    </a>
+
+                    <!-- Serviço 3: Corporal -->
+                    <a href="#" class="group block">
+                        <div class="aspect-[4/5] overflow-hidden bg-brand-bgAlt relative mb-6">
+                            <!-- 🔄 TROCAR IMAGEM: Serviço 3 -->
+                            <img src="https://placehold.co/600x750/EBE8E2/57534E?text=Drenagem+Linfática" alt="Estética Corporal" class="w-full h-full object-cover image-reveal">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        </div>
+                        <div class="text-center space-y-2">
+                            <span class="text-[9px] uppercase tracking-[0.2em] text-brand-accent">Estética Corporal</span>
+                            <h3 class="font-serif text-2xl text-brand-primary font-normal">Drenagem Linfática</h3>
+                            <p class="text-brand-muted font-light text-xs leading-relaxed max-w-xs mx-auto">Manobras precisas e suaves que reduzem o inchaço, desintoxicam o organismo e promovem bem-estar imediato.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="text-center mt-20">
+                    <!-- 🔄 TROCAR LINK: Tabela de preços / WhatsApp -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-xs font-medium tracking-[0.15em] text-brand-primary uppercase border-b border-brand-primary pb-1 hover:text-brand-accent hover:border-brand-accent transition-colors">
+                        Consultar Tabela Completa de Tratamentos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="py-32 bg-brand-primary text-brand-bg relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#F9F8F6 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                
+                <div class="space-y-12">
+                    <div class="space-y-6">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-brand-accent font-semibold block">A Experiência</span>
+                        <h2 class="font-serif text-4xl lg:text-5xl font-light leading-tight">
+                            Um refúgio para <br><span class="italic text-brand-accent">o seu autocuidado.</span>
+                        </h2>
+                        <p class="font-light text-brand-bgAlt/80 text-sm md:text-base max-w-md">
+                            Criamos um ambiente onde o tempo pausa. Da temperatura da maca à aromaterapia cuidadosamente selecionada, cada detalhe foi pensado para proporcionar uma experiência multissensorial de relaxamento profundo.
+                        </p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full border border-brand-accent/30 flex items-center justify-center shrink-0 text-brand-accent">
+                                <i class="fa-solid fa-leaf text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl mb-1">Cosméticos Premium</h4>
+                                <p class="text-xs text-brand-bgAlt/60 font-light leading-relaxed">Utilizamos apenas linhas profissionais de alta tecnologia, biocompatíveis e ricas em ativos botânicos comprovados.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full border border-brand-accent/30 flex items-center justify-center shrink-0 text-brand-accent">
+                                <i class="fa-solid fa-microscope text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl mb-1">Avaliação Individualizada</h4>
+                                <p class="text-xs text-brand-bgAlt/60 font-light leading-relaxed">Nenhum protocolo é padrão. Analisamos minuciosamente as necessidades da sua pele antes de qualquer intervenção.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🔄 TROCAR IMAGEM: Foto do ambiente da clínica -->
+                <div class="relative aspect-square lg:aspect-[4/5] overflow-hidden">
+                    <img src="https://placehold.co/800x1000/292524/C5B9A5?text=Ambiente+da+Clínica" alt="Ambiente do Estúdio" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 bg-white">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-3xl lg:text-4xl text-brand-primary font-light">Dúvidas Frequentes</h2>
+                </div>
+
+                <!-- 🔄 TROCAR TEXTOS: Ajustar FAQ conforme as dúvidas dos clientes -->
+                <div class="space-y-4">
+                    <div class="border-b border-brand-border pb-4">
+                        <button class="faq-btn w-full flex justify-between items-center text-left py-4 focus:outline-none group">
+                            <span class="font-medium text-brand-primary text-sm group-hover:text-brand-accent transition-colors">Como funciona a primeira avaliação?</span>
+                            <i class="fa-solid fa-plus text-brand-accent text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden text-brand-muted text-sm font-light leading-relaxed pb-4">
+                            A primeira avaliação é um momento dedicado a entender a história da sua pele, sua rotina e seus objetivos. Realizamos uma análise detalhada visual e tátil para estruturar o melhor protocolo de tratamento personalizado para você.
+                        </div>
+                    </div>
+
+                    <div class="border-b border-brand-border pb-4">
+                        <button class="faq-btn w-full flex justify-between items-center text-left py-4 focus:outline-none group">
+                            <span class="font-medium text-brand-primary text-sm group-hover:text-brand-accent transition-colors">Os tratamentos são dolorosos?</span>
+                            <i class="fa-solid fa-plus text-brand-accent text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden text-brand-muted text-sm font-light leading-relaxed pb-4">
+                            Priorizamos o seu conforto. A maioria dos nossos procedimentos é totalmente indolor e relaxante. Para técnicas que podem causar algum desconforto, como o microagulhamento, utilizamos recursos e métodos que minimizam qualquer sensibilidade, garantindo uma experiência tranquila.
+                        </div>
+                    </div>
+
+                    <div class="border-b border-brand-border pb-4">
+                        <button class="faq-btn w-full flex justify-between items-center text-left py-4 focus:outline-none group">
+                            <span class="font-medium text-brand-primary text-sm group-hover:text-brand-accent transition-colors">Qual a frequência ideal para a Limpeza de Pele?</span>
+                            <i class="fa-solid fa-plus text-brand-accent text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden text-brand-muted text-sm font-light leading-relaxed pb-4">
+                            A frequência varia conforme o seu tipo de pele. Peles oleosas ou acneicas podem se beneficiar de manutenções a cada 30 ou 45 dias. Já peles normais a secas podem realizar o procedimento a cada 60 dias. Definimos essa periodicidade juntos na sua avaliação.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-bg border-t border-brand-border pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <!-- Marca -->
+                <div class="flex flex-col items-start space-y-4">
+                    <a href="#" class="flex flex-col">
+                        <span class="font-serif text-xl tracking-[0.15em] font-medium text-brand-primary uppercase">Helena Valença</span>
+                        <span class="text-[8px] tracking-[0.3em] text-brand-muted uppercase mt-1">Estética & Bem-Estar</span>
+                    </a>
+                    <p class="text-xs text-brand-muted font-light max-w-xs leading-relaxed">
+                        Protocolos faciais e corporais personalizados. Realce sua beleza natural com saúde, ciência e autocuidado.
+                    </p>
+                </div>
+
+                <!-- Localização & Contato -->
+                <div class="space-y-4">
+                    <h5 class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-primary">Atendimento</h5>
+                    <ul class="text-xs text-brand-muted font-light space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i>
+                            <!-- 🔄 TROCAR TEXTO: Endereço -->
+                            <span>Rua Fictícia da Silva, 123 - Sala 45<br>Jardins, São Paulo - SP</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-regular fa-clock text-brand-accent"></i>
+                            <!-- 🔄 TROCAR TEXTO: Horário -->
+                            <span>Seg - Sex: 09h às 19h | Sáb: 09h às 14h</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CTA Rápido -->
+                <div class="space-y-4">
+                    <h5 class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-primary">Pronta para começar?</h5>
+                    <p class="text-xs text-brand-muted font-light">Agende seu horário e dê o primeiro passo para a sua melhor versão.</p>
+                    
+                    <!-- 🔄 TROCAR LINK: WhatsApp Rodapé -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" 
+                        class="inline-flex items-center justify-center bg-brand-primary text-white px-6 py-3 text-xs font-medium tracking-[0.15em] uppercase hover:bg-brand-text transition-colors mt-2">
+                        Agendar Horário
+                    </a>
+                </div>
+            </div>
+
+            <div class="hairline mb-8"></div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Redes Sociais -->
+                <div class="flex items-center gap-4 text-brand-primary">
+                    <!-- 🔄 TROCAR LINKS: Instagram e WhatsApp -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+                <!-- Copyright e Créditos Obrigatórios -->
+                <div class="text-center md:text-right text-[10px] text-brand-muted font-light space-y-1">
+                    <p>&copy; <span id="year"></span> Helena Valença Estética. Todos os direitos reservados.</p>
+                    <p>
+                        Desenvolvido por 
+                        <!-- 🔄 TROCAR LINK: Site da GR Presença Digital -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-brand-accent hover:text-brand-primary font-medium transition-colors underline decoration-brand-accent/30 underline-offset-4">
+                            GR Presença Digital
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🌟 MARCA D'ÁGUA FLUTUANTE GR PRESENÇA DIGITAL (Para evitar cópias da amostra) 🌟 -->
+    <div class="fixed bottom-4 left-4 z-[9999] bg-brand-bg/95 backdrop-blur-sm border border-brand-border text-brand-muted px-4 py-2 rounded-lg shadow-2xl flex items-center gap-2 pointer-events-none transition-all">
+        <i class="fa-solid fa-code text-brand-accent"></i>
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">Amostra • GR Presença Digital</span>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const header = document.getElementById('header');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars-staggered');
+            } else {
+                icon.classList.remove('fa-bars-staggered');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars-staggered');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(45deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

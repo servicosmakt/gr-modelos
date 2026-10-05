@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Salon & Studio | Beleza, Arte e Exclusividade</title>
+    
+    <!-- TAG PARA NÃO INDEXAR NO GOOGLE (Ideal para amostras de portfólio) -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aura: {
+                            bg: '#FBF9F6',
+                            card: '#F4EFEA',
+                            dark: '#1C1A18',
+                            gold: '#C5A880',
+                            goldHover: '#B0936C',
+                            rose: '#E6D7D3',
+                            muted: '#7A736E'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FBF9F6; color: #1C1A18; }
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .hero-overlay { background: linear-gradient(to top, rgba(28, 26, 24, 0.85), rgba(28, 26, 24, 0.3)); }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#C5A880] selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#FBF9F6]/90 backdrop-blur-md border-b border-[#E6D7D3]/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl md:text-3xl font-semibold tracking-wider text-aura-dark">
+                AURA <span class="text-aura-gold font-normal italic">Salon</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide uppercase">
+                <a href="#sobre" class="hover:text-aura-gold transition-colors">O Salão</a>
+                <a href="#servicos" class="hover:text-aura-gold transition-colors">Serviços</a>
+                <a href="#equipe" class="hover:text-aura-gold transition-colors">Especialistas</a>
+                <a href="#galeria" class="hover:text-aura-gold transition-colors">Portfólio</a>
+                <a href="#depoimentos" class="hover:text-aura-gold transition-colors">Avaliações</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://wa.me/5531999999999" target="_blank" class="px-6 py-2.5 bg-aura-dark text-white text-xs uppercase tracking-widest rounded-full hover:bg-aura-gold transition-all duration-300 flex items-center gap-2 shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Agendar Horário
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden text-aura-dark focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FBF9F6] border-b border-[#E6D7D3] px-6 py-6 space-y-4">
+            <a href="#sobre" class="block text-sm font-medium uppercase tracking-wider hover:text-aura-gold">O Salão</a>
+            <a href="#servicos" class="block text-sm font-medium uppercase tracking-wider hover:text-aura-gold">Serviços</a>
+            <a href="#equipe" class="block text-sm font-medium uppercase tracking-wider hover:text-aura-gold">Especialistas</a>
+            <a href="#galeria" class="block text-sm font-medium uppercase tracking-wider hover:text-aura-gold">Portfólio</a>
+            <a href="#depoimentos" class="block text-sm font-medium uppercase tracking-wider hover:text-aura-gold">Avaliações</a>
+            <a href="https://wa.me/5531999999999" target="_blank" class="w-full py-3 bg-aura-dark text-white text-center text-xs uppercase tracking-widest rounded-full flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i> Agendar Horário
+            </a>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1920" alt="Interior luxuoso do salão Aura" class="w-full h-full object-cover object-center filter brightness-90">
+            <div class="absolute inset-0 bg-gradient-to-r from-aura-dark/70 via-aura-dark/40 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-8 text-white space-y-6">
+                <span class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-xs uppercase tracking-widest text-aura-gold border border-aura-gold/30">
+                    Excelência em Estética & Cabelos
+                </span>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal leading-none tracking-tight">
+                    Sua melhor versão, <br><span class="italic text-aura-gold">redesenhada.</span>
+                </h1>
+                <p class="text-base md:text-lg text-gray-200 max-w-xl font-light leading-relaxed">
+                    Um santuário de beleza dedicado a transformar o seu visual através de técnicas de alta precisão, atendimento personalizado e um ambiente sofisticado.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="#servicos" class="px-8 py-4 bg-aura-gold text-aura-dark font-semibold text-xs uppercase tracking-widest rounded-full hover:bg-white transition-all text-center shadow-lg">
+                        Explorar Serviços
+                    </a>
+                    <a href="https://wa.me/5531999999999" target="_blank" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold text-xs uppercase tracking-widest rounded-full transition-all text-center border border-white/20">
+                        Agendamento VIP
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hidden lg:block lg:col-span-4">
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 text-white space-y-6 shadow-2xl">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-aura-gold/20 flex items-center justify-center text-aura-gold">
+                            <i class="fa-solid fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-300 uppercase tracking-wider">Horário de Funcionamento</p>
+                            <p class="font-medium">Terça a Sábado: 09h às 20h</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/10 pt-6">
+                        <p class="text-sm font-light text-gray-200 italic">"O luxo está nos detalhes, na exclusividade do atendimento e na confiança que inspiramos."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-aura-card border-y border-[#E6D7D3]">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="space-y-2">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-aura-dark">12+</h3>
+                <p class="text-xs uppercase tracking-wider text-aura-muted">Anos de Experiência</p>
+            </div>
+            <div class="space-y-2">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-aura-dark">5.000+</h3>
+                <p class="text-xs uppercase tracking-wider text-aura-muted">Clientes Atendidas</p>
+            </div>
+            <div class="space-y-2">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-aura-dark">100%</h3>
+                <p class="text-xs uppercase tracking-wider text-aura-muted">Produtos Premium</p>
+            </div>
+            <div class="space-y-2">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-aura-dark">4.9★</h3>
+                <p class="text-xs uppercase tracking-wider text-aura-muted">Avaliação Média</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-24 md:py-32 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-xs uppercase tracking-widest text-aura-gold font-semibold">Sobre o Salão</span>
+                <h2 class="font-serif text-4xl md:text-6xl font-normal leading-tight text-aura-dark">
+                    Um refúgio de bem-estar, beleza e sofisticação.
+                </h2>
+                <p class="text-aura-muted leading-relaxed font-light">
+                    Fundado com o propósito de elevar a autoestima através de uma estética refinada e consciente. No Aura Salon, cada cliente é recebida com exclusividade em um espaço projetado para proporcionar relaxamento profundo e resultados impecáveis.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4">
+                    <div class="space-y-2">
+                        <h4 class="font-serif text-xl font-medium text-aura-dark flex items-center gap-2">
+                            <i class="fa-solid fa-gem text-aura-gold text-sm"></i> Atendimento 100% Personalizado
+                        </h4>
+                        <p class="text-xs text-aura-muted">Diagnóstico capilar e estético exclusivo antes de cada procedimento.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-serif text-xl font-medium text-aura-dark flex items-center gap-2">
+                            <i class="fa-solid fa-seedling text-aura-gold text-sm"></i> Tecnologia & Sustentabilidade
+                        </h4>
+                        <p class="text-xs text-aura-muted">Fórmulas limpas, cruelty-free e equipamentos de última geração.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-6 relative">
+                <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800" alt="Profissional do salão atendendo cliente" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-8 -left-8 w-64 h-64 bg-aura-rose/50 rounded-full blur-3xl -z-10"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24 bg-aura-card border-y border-[#E6D7D3]/60">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="text-xs uppercase tracking-widest text-aura-gold font-semibold">Nossos Serviços</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-normal text-aura-dark">Experiências de Transformação</h2>
+                <p class="text-aura-muted font-light text-sm">Escolha a categoria ideal para o seu momento de autocuidado.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-[#FBF9F6] p-8 rounded-3xl border border-[#E6D7D3] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-aura-card flex items-center justify-center text-aura-gold text-2xl group-hover:bg-aura-dark group-hover:text-white transition-all">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-medium text-aura-dark">Cabelos & Coloração</h3>
+                        <p class="text-xs text-aura-muted leading-relaxed">Cortes personalizados, mechas iluminadas, balayage, tratamentos de alta performance e blindagem capilar.</p>
+                    </div>
+                    <div class="pt-8 border-t border-[#E6D7D3]/50 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider font-semibold text-aura-dark">Sob Consulta</span>
+                        <a href="https://wa.me/5531999999999" target="_blank" class="text-xs uppercase tracking-widest font-bold text-aura-gold hover:underline flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-[#FBF9F6] p-8 rounded-3xl border border-[#E6D7D3] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-aura-card flex items-center justify-center text-aura-gold text-2xl group-hover:bg-aura-dark group-hover:text-white transition-all">
+                            <i class="fa-solid fa-hand-sparkles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-medium text-aura-dark">Nail Studio & SPA</h3>
+                        <p class="text-xs text-aura-muted leading-relaxed">Manicure em gel, blindagem de unhas, nail art sofisticada, spa dos pés e cuidados profundos para cutículas.</p>
+                    </div>
+                    <div class="pt-8 border-t border-[#E6D7D3]/50 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider font-semibold text-aura-dark">A partir de R$ 70</span>
+                        <a href="https://wa.me/5531999999999" target="_blank" class="text-xs uppercase tracking-widest font-bold text-aura-gold hover:underline flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-[#FBF9F6] p-8 rounded-3xl border border-[#E6D7D3] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-aura-card flex items-center justify-center text-aura-gold text-2xl group-hover:bg-aura-dark group-hover:text-white transition-all">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-medium text-aura-dark">Estética Facial & Cílios</h3>
+                        <p class="text-xs text-aura-muted leading-relaxed">Design de sobrancelhas impecável, extensão de cílios fio a fio, limpeza de pele profunda e revitalização facial.</p>
+                    </div>
+                    <div class="pt-8 border-t border-[#E6D7D3]/50 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider font-semibold text-aura-dark">A partir de R$ 90</span>
+                        <a href="https://wa.me/5531999999999" target="_blank" class="text-xs uppercase tracking-widest font-bold text-aura-gold hover:underline flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+            <span class="text-xs uppercase tracking-widest text-aura-gold font-semibold">Nossa Equipe</span>
+            <h2 class="font-serif text-4xl md:text-5xl font-normal text-aura-dark">Talentos que Inspiram Confiança</h2>
+            <p class="text-aura-muted font-light text-sm">Profissionais altamente capacitadas e apaixonadas pela arte de cuidar de você.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Team Member 1 -->
+            <div class="group relative overflow-hidden rounded-3xl aspect-[3/4] shadow-md">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Camila Santos - Master Hair Stylist" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-aura-dark/80 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+                    <h3 class="font-serif text-2xl font-medium">Camila Santos</h3>
+                    <p class="text-xs uppercase tracking-wider text-aura-gold">Master Hair Stylist & Colorista</p>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="group relative overflow-hidden rounded-3xl aspect-[3/4] shadow-md">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=600" alt="Beatriz Lima - Nail & SPA Designer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-aura-dark/80 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+                    <h3 class="font-serif text-2xl font-medium">Beatriz Lima</h3>
+                    <p class="text-xs uppercase tracking-wider text-aura-gold">Nail Artist & Especialista em Gel</p>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="group relative overflow-hidden rounded-3xl aspect-[3/4] shadow-md">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=600" alt="Mariana Costa - Esteticista Facial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-aura-dark/80 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+                    <h3 class="font-serif text-2xl font-medium">Mariana Costa</h3>
+                    <p class="text-xs uppercase tracking-wider text-aura-gold">Esteticista & Lash Designer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-24 bg-aura-card border-y border-[#E6D7D3]/60">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="text-xs uppercase tracking-widest text-aura-gold font-semibold">Portfólio & Resultados</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-normal text-aura-dark">Inspirações para o Seu Próximo Look</h2>
+                <p class="text-aura-muted font-light text-sm">Cada transformação é única e desenhada sob medida para realçar sua essência.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=500" alt="Resultado de cabelo" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&q=80&w=500" alt="Nail art elegante" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1512290900722-9a70f8a262c5?auto=format&fit=crop&q=80&w=500" alt="Sobrancelhas e cílios" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&q=80&w=500" alt="Tratamento capilar" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+            <span class="text-xs uppercase tracking-widest text-aura-gold font-semibold">Depoimentos</span>
+            <h2 class="font-serif text-4xl md:text-5xl font-normal text-aura-dark">O Que Nossas Clientes Dizem</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl border border-[#E6D7D3] shadow-sm space-y-4">
+                <div class="text-aura-gold flex gap-1 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm text-aura-muted font-light leading-relaxed">"O atendimento é impecável do início ao fim. A Camila entendeu exatamente o tom de loiro que eu queria sem danificar meu cabelo. Simplesmente amei!"</p>
+                <div>
+                    <h4 class="font-serif font-medium text-aura-dark">Juliana Ribeiro</h4>
+                    <p class="text-xs text-aura-muted">Cliente há 2 anos</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-[#E6D7D3] shadow-sm space-y-4">
+                <div class="text-aura-gold flex gap-1 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm text-aura-muted font-light leading-relaxed">"O ambiente do salão é um verdadeiro oásis. A manicure em gel dura semanas intacta e o cuidado com a higiene é notável. Recomendo muito!"</p>
+                <div>
+                    <h4 class="font-serif font-medium text-aura-dark">Fernanda Motta</h4>
+                    <p class="text-xs text-aura-muted">Cliente VIP</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-[#E6D7D3] shadow-sm space-y-4">
+                <div class="text-aura-gold flex gap-1 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm text-aura-muted font-light leading-relaxed">"Fiz meu design de cílios e sobrancelhas com a Mariana. Trabalho extremamente delicado e natural. Saí me sentindo renovada."</p>
+                <div>
+                    <h4 class="font-serif font-medium text-aura-dark">Patrícia Alencar</h4>
+                    <p class="text-xs text-aura-muted">Primeira visita</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-aura-dark text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
+            <span class="text-xs uppercase tracking-widest text-aura-gold font-semibold">Agende Seu Momento</span>
+            <h2 class="font-serif text-4xl md:text-6xl font-normal leading-tight">Pronta para viver a <br><span class="italic text-aura-gold">experiência Aura?</span></h2>
+            <p class="text-gray-300 max-w-xl mx-auto font-light text-sm">Entre em contato agora pelo WhatsApp e garanta seu horário com nossas especialistas.</p>
+            <div>
+                <a href="https://wa.me/5531999999999" target="_blank" class="inline-flex items-center gap-3 px-10 py-5 bg-aura-gold text-aura-dark font-semibold text-xs uppercase tracking-widest rounded-full hover:bg-white transition-all shadow-xl">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Falar com Atendimento no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-aura-dark text-gray-400 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div class="space-y-4">
+                <h3 class="font-serif text-2xl text-white tracking-wider">AURA <span class="text-aura-gold font-normal italic">Salon</span></h3>
+                <p class="text-xs text-gray-400 font-light leading-relaxed">Beleza, sofisticação e cuidado em cada detalhe. O seu espaço de transformação e autocuidado.</p>
+            </div>
+            <div>
+                <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Links Rápidos</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#sobre" class="hover:text-aura-gold transition-colors">O Salão</a></li>
+                    <li><a href="#servicos" class="hover:text-aura-gold transition-colors">Serviços</a></li>
+                    <li><a href="#equipe" class="hover:text-aura-gold transition-colors">Especialistas</a></li>
+                    <li><a href="#galeria" class="hover:text-aura-gold transition-colors">Portfólio</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Contato</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><i class="fa-solid fa-location-dot text-aura-gold mr-2"></i> Av. dos Bandeirantes, 1000 - Belo Horizonte, MG</li>
+                    <li><i class="fa-brands fa-whatsapp text-aura-gold mr-2"></i> (31) 99999-9999</li>
+                    <li><i class="fa-solid fa-envelope text-aura-gold mr-2"></i> contato@aurasalon.com.br</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Redes Sociais</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-aura-gold hover:text-aura-dark transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-aura-gold hover:text-aura-dark transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-xs font-light text-gray-500">
+            <p>&copy; <span id="year"></span> Aura Salon & Studio. Todos os direitos reservados.</p>
+            <p class="mt-4 md:mt-0">Desenvolvido com excelência estratégica para Portfólio.</p>
+        </div>
+    </footer>
+
+    <!-- 🌟 MARCA D'ÁGUA FLUTUANTE DE AMOSTRA 🌟 -->
+    <div class="fixed bottom-4 left-4 z-[9999] bg-[#1C1A18]/95 backdrop-blur-sm border border-[#C5A880]/30 text-gray-300 px-4 py-2 rounded-lg shadow-2xl flex items-center gap-2 pointer-events-none transition-all">
+        <i class="fa-solid fa-code text-[#C5A880]"></i>
+        <span class="text-xs font-bold uppercase tracking-widest text-white">Amostra • GR Presença Digital</span>
+    </div>
+
+    <script>
+        // Definir ano dinâmico
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

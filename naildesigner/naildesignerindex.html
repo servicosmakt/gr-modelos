@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabella Ricci | Fine Nail Artistry</title>
+    
+    <!-- TAG PARA NÃO INDEXAR NO GOOGLE (Ideal para amostras) -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <meta name="description" content="Especialista em unhas de alto padrão, alongamentos naturais e nail art minimalista.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#FDFBF9', /* Off-white muito suave */
+                        'brand-dark': '#2A2A2A', /* Carvão elegante */
+                        'brand-accent': '#9A8068', /* Taupe encorpado para alto contraste e legibilidade */
+                        'brand-light': '#F4EFEA',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FDFBF9;
+            color: #2A2A2A;
+            overflow-x: hidden;
+        }
+        
+        /* Oculta scrollbar para um visual mais limpo, mas mantém a funcionalidade */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FDFBF9; }
+        ::-webkit-scrollbar-thumb { background: #D6C5B3; border-radius: 4px; }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .img-hover-zoom {
+            overflow: hidden;
+        }
+        .img-hover-zoom img {
+            transition: transform 0.7s ease;
+        }
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Nav background transition */
+        .nav-scrolled {
+            background-color: rgba(253, 251, 249, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-brand-dark selection:bg-brand-accent selection:text-white">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 flex justify-between items-center">
+        <!-- 🔄 TROCAR TEXTO: Nome da Marca ou inserir tag <img> para Logo -->
+        <a href="#" class="font-serif text-2xl tracking-wider font-semibold z-50">ISABELLA RICCI</a>
+        
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex space-x-8 items-center text-sm font-medium tracking-widest uppercase">
+            <a href="#sobre" class="hover:text-brand-accent transition-colors">Sobre</a>
+            <a href="#servicos" class="hover:text-brand-accent transition-colors">Especialidades</a>
+            <a href="#portfolio" class="hover:text-brand-accent transition-colors">Portfólio</a>
+            <!-- 🔄 TROCAR LINK: WhatsApp (Desktop) -->
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="px-6 py-3 border border-brand-dark hover:bg-brand-dark hover:text-white transition-all duration-300">
+                Agendar
+            </a>
+        </div>
+
+        <!-- Menu Mobile Button -->
+        <button id="mobile-menu-btn" class="md:hidden z-50 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </nav>
+
+    <!-- Menu Mobile Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-bg z-40 flex flex-col justify-center items-center space-y-8 opacity-0 pointer-events-none transition-opacity duration-300">
+        <a href="#sobre" class="mobile-link font-serif text-2xl">Sobre</a>
+        <a href="#servicos" class="mobile-link font-serif text-2xl">Especialidades</a>
+        <a href="#portfolio" class="mobile-link font-serif text-2xl">Portfólio</a>
+        <!-- 🔄 TROCAR LINK: WhatsApp (Mobile) -->
+        <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="mobile-link px-8 py-3 bg-brand-dark text-white font-serif text-xl">Agendar Horário</a>
+    </div>
+
+    <header class="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 w-full h-full">
+            <!-- 🔄 TROCAR IMAGEM: Fundo Hero Principal -->
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=2000&auto=format&fit=crop" alt="Unhas minimalistas de luxo" class="w-full h-full object-cover object-center opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-bg/50 via-brand-bg/20 to-brand-bg/90"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto fade-in-up">
+            <h2 class="text-sm md:text-base uppercase tracking-[0.3em] text-gray-500 mb-6 font-medium">Fine Nail Artistry</h2>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-8">
+                A arte do detalhe <br>
+                <span class="italic text-brand-accent drop-shadow-sm">em cada traço.</span>
+            </h1>
+            <p class="text-base md:text-lg text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                Elevando a experiência do design de unhas com técnicas premium, foco na saúde natural das suas mãos e acabamento impecável.
+            </p>
+            <!-- 🔄 TROCAR LINK: WhatsApp Hero -->
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20conhecer%20mais%20sobre%20os%20serviços." target="_blank" class="inline-block bg-brand-dark text-white px-10 py-4 text-sm tracking-widest uppercase hover:bg-brand-accent transition-colors duration-300">
+                Descubra a Experiência
+            </a>
+        </div>
+    </header>
+
+    <section id="sobre" class="py-24 md:py-32 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="img-hover-zoom relative h-[500px] md:h-[700px] w-full fade-in-up">
+                <!-- 🔄 TROCAR IMAGEM: Foto Seção Sobre -->
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1000&auto=format&fit=crop" alt="Profissional trabalhando" class="w-full h-full object-cover">
+                <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-brand-light -z-10 hidden md:block"></div>
+            </div>
+            
+            <div class="fade-in-up">
+                <h3 class="font-serif text-3xl md:text-5xl mb-6">Redefinindo o cuidado com as suas mãos.</h3>
+                <p class="text-gray-600 font-light mb-6 leading-relaxed">
+                    Acredito que suas unhas são uma extensão da sua identidade e estilo pessoal. Meu trabalho vai além da estética; é sobre entregar um momento de pausa, cuidado e luxo no seu dia a dia.
+                </p>
+                <p class="text-gray-600 font-light mb-10 leading-relaxed">
+                    Especializada em técnicas avançadas de alongamento com aspecto natural e esmaltação em gel de alta durabilidade, utilizo apenas produtos importados e ferramentas de precisão cirúrgica para garantir não apenas beleza, mas a saúde integral das suas unhas.
+                </p>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- 🔄 TROCAR TEXTO: Nome da Profissional -->
+                    <span class="font-serif italic text-2xl text-brand-accent">Isabella Ricci</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24 md:py-32 px-6 md:px-12 bg-brand-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 fade-in-up">
+                <span class="text-xs tracking-[0.2em] uppercase text-gray-500 font-semibold block mb-4">O Menu</span>
+                <h2 class="font-serif text-4xl md:text-5xl">Especialidades</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Serviço 1 -->
+                <div class="group cursor-pointer fade-in-up">
+                    <div class="overflow-hidden mb-6 h-80">
+                        <!-- 🔄 TROCAR IMAGEM: Serviço 1 -->
+                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?q=80&w=800&auto=format&fit=crop" alt="Manicure Russa e Esmaltação em Gel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <h4 class="font-serif text-2xl mb-3">Esmaltação em Gel Premium</h4>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed mb-4">
+                        Alinhamento perfeito da lâmina, preparo meticuloso da cutícula (técnica combinada) e brilho intenso que dura até 21 dias intacto.
+                    </p>
+                    <span class="text-xs tracking-widest uppercase border-b border-brand-dark pb-1 group-hover:text-brand-accent group-hover:border-brand-accent transition-colors">A partir de R$ 120</span>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="group cursor-pointer fade-in-up" style="transition-delay: 100ms;">
+                    <div class="overflow-hidden mb-6 h-80">
+                        <!-- 🔄 TROCAR IMAGEM: Serviço 2 -->
+                        <img src="https://images.unsplash.com/photo-1620331317311-0aa8112347bd?q=80&w=800&auto=format&fit=crop" alt="Alongamento em Fibra de Vidro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <h4 class="font-serif text-2xl mb-3">Alongamento Naturalidade</h4>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed mb-4">
+                        Extensão em fibra de vidro com curvatura em C perfeita e espessura milimétrica. O visual de uma unha natural, com a resistência do gel.
+                    </p>
+                    <span class="text-xs tracking-widest uppercase border-b border-brand-dark pb-1 group-hover:text-brand-accent group-hover:border-brand-accent transition-colors">A partir de R$ 250</span>
+                </div>
+                
+                <!-- Serviço 3 -->
+                <div class="group cursor-pointer fade-in-up" style="transition-delay: 200ms;">
+                    <div class="overflow-hidden mb-6 h-80">
+                        <!-- 🔄 TROCAR IMAGEM: Serviço 3 -->
+                        <img src="https://images.unsplash.com/photo-1595868822699-23c316715b94?q=80&w=800&auto=format&fit=crop" alt="Fine Line Nail Art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <h4 class="font-serif text-2xl mb-3">Fine Line & Minimal Art</h4>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed mb-4">
+                        Design autoral e exclusivo. Traços ultrafinos, ombré suave, encapsuladas discretas ou minimalismo geométrico feito à mão.
+                    </p>
+                    <span class="text-xs tracking-widest uppercase border-b border-brand-dark pb-1 group-hover:text-brand-accent group-hover:border-brand-accent transition-colors">Sob Consulta</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="max-w-full px-4 md:px-12">
+            <div class="flex justify-between items-end mb-12 fade-in-up">
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-2">O Portfólio</h2>
+                    <p class="text-gray-500 font-light">Criações recentes e curadoria de estilo.</p>
+                </div>
+                <!-- 🔄 TROCAR LINK: Instagram -->
+                <a href="https://instagram.com" target="_blank" class="hidden md:inline-block text-sm tracking-widest uppercase border-b border-brand-dark pb-1 hover:text-brand-accent transition-colors">Ver no Instagram</a>
+            </div>
+            
+            <!-- Grid estilo Masonry Simples -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- 🔄 TROCAR IMAGENS: Fotos do Portfólio -->
+                <div class="col-span-2 md:col-span-2 row-span-2 img-hover-zoom fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?q=80&w=800&auto=format&fit=crop" alt="Trabalho 1" class="w-full h-full object-cover">
+                </div>
+                <div class="img-hover-zoom fade-in-up" style="transition-delay: 100ms;">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop" alt="Trabalho 2" class="w-full h-full object-cover aspect-square">
+                </div>
+                <div class="img-hover-zoom fade-in-up" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1595868822699-23c316715b94?q=80&w=800&auto=format&fit=crop" alt="Trabalho 3" class="w-full h-full object-cover aspect-square">
+                </div>
+                <div class="img-hover-zoom fade-in-up" style="transition-delay: 100ms;">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop" alt="Trabalho 4" class="w-full h-full object-cover aspect-square">
+                </div>
+                <div class="img-hover-zoom fade-in-up" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1620331317311-0aa8112347bd?q=80&w=800&auto=format&fit=crop" alt="Trabalho 5" class="w-full h-full object-cover aspect-square">
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                 <!-- 🔄 TROCAR LINK: Instagram (Mobile) -->
+                <a href="https://instagram.com" target="_blank" class="inline-block text-sm tracking-widest uppercase border-b border-brand-dark pb-1">Ver no Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-brand-light text-center px-6">
+        <div class="max-w-3xl mx-auto fade-in-up">
+            <i class="fas fa-quote-left text-3xl text-brand-accent mb-8 opacity-50"></i>
+            <p class="font-serif text-2xl md:text-3xl leading-relaxed mb-8 italic">
+                "A perfeição existe e está nos detalhes. A durabilidade do gel é impressionante e o formato das unhas nunca esteve tão elegante. O estúdio é um refúgio."
+            </p>
+            <!-- 🔄 TROCAR TEXTO: Nome da Cliente -->
+            <p class="text-sm tracking-[0.2em] uppercase font-semibold text-gray-500">— Marina S.</p>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-white pt-24 pb-12 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+            <div>
+                <h2 class="font-serif text-4xl md:text-6xl mb-6">Pronta para <br>sua transformação?</h2>
+                <p class="text-gray-400 font-light mb-10 max-w-md">
+                    Os agendamentos são feitos exclusivamente via WhatsApp para garantir um atendimento personalizado desde o primeiro contato.
+                </p>
+                <!-- 🔄 TROCAR LINK: WhatsApp Footer -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20solicitar%20um%20agendamento." target="_blank" class="inline-block bg-white text-brand-dark px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-brand-accent hover:text-white transition-colors duration-300">
+                    Solicitar Agendamento
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div>
+                    <h5 class="text-xs tracking-widest uppercase text-gray-500 mb-6">Contato</h5>
+                    <!-- 🔄 TROCAR TEXTOS: Dados de Contato -->
+                    <ul class="space-y-4 font-light text-gray-300">
+                        <li><a href="https://wa.me/5511999999999" target="_blank" class="hover:text-white transition-colors">WhatsApp: (11) 90000-0000</a></li>
+                        <li><a href="mailto:contato@isabellaricci.com" class="hover:text-white transition-colors">contato@isabellaricci.com</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs tracking-widest uppercase text-gray-500 mb-6">Estúdio</h5>
+                    <!-- 🔄 TROCAR TEXTOS: Endereço -->
+                    <ul class="space-y-4 font-light text-gray-300">
+                        <li>Av. Faria Lima, 1000 - Cj 42</li>
+                        <li>Jardim Paulistano, São Paulo</li>
+                        <li class="pt-4 flex space-x-4">
+                            <!-- 🔄 TROCAR LINKS: Redes Sociais -->
+                            <a href="https://instagram.com" target="_blank" class="text-xl hover:text-brand-accent transition-colors"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank" class="text-xl hover:text-brand-accent transition-colors"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+            <p>&copy; <span id="year"></span> Isabella Ricci Fine Nail Artistry. Todos os direitos reservados.</p>
+            
+            <p class="mt-4 md:mt-0">
+                Desenvolvido por 
+                <!-- 🔄 TROCAR LINK: Link do seu portfólio -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-400 hover:text-brand-accent transition-colors duration-300">
+                    GR Presença Digital
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- 🌟 MARCA D'ÁGUA FLUTUANTE GR PRESENÇA DIGITAL 🌟 -->
+    <div class="fixed bottom-4 left-4 z-[9999] bg-brand-dark/95 backdrop-blur-sm border border-brand-accent/30 text-gray-300 px-4 py-2 rounded-lg shadow-2xl flex items-center gap-2 pointer-events-none transition-all">
+        <i class="fa-solid fa-code text-brand-accent"></i>
+        <span class="text-xs font-bold uppercase tracking-widest text-white">Amostra • GR Presença Digital</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Definir ano dinâmico
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scrolled');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                }
+            });
+
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-link');
+            const icon = btn.querySelector('i');
+
+            function toggleMenu() {
+                const isOpen = menu.classList.contains('opacity-100');
+                if (isOpen) {
+                    menu.classList.remove('opacity-100', 'pointer-events-auto');
+                    menu.classList.add('opacity-0', 'pointer-events-none');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = 'auto'; // Retorna o scroll
+                } else {
+                    menu.classList.remove('opacity-0', 'pointer-events-none');
+                    menu.classList.add('opacity-100', 'pointer-events-auto');
+                    icon.classList.replace('fa-bars', 'fa-times');
+                    document.body.style.overflow = 'hidden'; // Trava o scroll
+                }
+            }
+
+            btn.addEventListener('click', toggleMenu);
+            links.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // Intersection Observer for Fade-In Animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Anima apenas uma vez
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

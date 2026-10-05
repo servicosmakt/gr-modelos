@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Maquiagem Profissional</title>
+    
+    <!-- TAG PARA NÃO INDEXAR NO GOOGLE (Ideal para amostras) -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <meta name="description" content="Maquiagem sofisticada e atemporal para os momentos mais inesquecíveis da sua vida. Noivas, eventos e editoriais.">
+    
+    <!-- Google Fonts: Cormorant Garamond (Elegância/Títulos) e Inter (Leitura/Corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lumi-dark': '#2C2A29',    // Carvão escuro para texto
+                        'lumi-light': '#F8F5F2',   // Creme claro para fundo
+                        'lumi-nude': '#E8D8CE',    // Nude quente
+                        'lumi-accent': '#D4AF37',  // Dourado suave para pequenos detalhes
+                        'lumi-gray': '#7A7571'     // Cinza quente para textos secundários
+                    },
+                    fontFamily: {
+                        'serif': ['"Cormorant Garamond"', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos Base e Utilidades */
+        body {
+            background-color: #F8F5F2;
+            color: #2C2A29;
+            overflow-x: hidden;
+        }
+
+        .font-serif {
+            letter-spacing: -0.02em;
+        }
+
+        /* Classes para animação de fade-in no scroll */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-up.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efeito de hover em imagens da galeria */
+        .gallery-img-container {
+            overflow: hidden;
+        }
+        
+        .gallery-img-container img {
+            transition: transform 0.7s ease;
+        }
+        
+        .gallery-img-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Menu Mobile transition */
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        
+        #mobile-menu.open {
+            max-height: 400px; /* Ajuste conforme necessário */
+            opacity: 1;
+        }
+
+        /* Estilo para esconder a barra de rolagem mas manter o scroll (para a galeria mobile) */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-lumi-dark selection:bg-lumi-nude selection:text-lumi-dark">
+
+    <!-- HEADER -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="#" class="font-serif text-3xl tracking-wide font-semibold z-50 relative">
+                LUMINA<span class="text-lumi-accent">.</span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex space-x-8 items-center font-sans text-sm tracking-widest uppercase">
+                <a href="#sobre" class="hover:text-lumi-gray transition-colors">Sobre</a>
+                <a href="#servicos" class="hover:text-lumi-gray transition-colors">Especialidades</a>
+                <a href="#portfolio" class="hover:text-lumi-gray transition-colors">Portfólio</a>
+                <a href="#faq" class="hover:text-lumi-gray transition-colors">Dúvidas</a>
+                <!-- 🔄 TROCAR LINK: WhatsApp (Desktop) -->
+                <a href="https://wa.me/5511999999999" target="_blank" class="border border-lumi-dark px-6 py-2 hover:bg-lumi-dark hover:text-lumi-light transition-all duration-300">
+                    Agendar Horário
+                </a>
+            </nav>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden z-50 relative text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-lumi-light shadow-lg border-t border-lumi-nude">
+            <div class="flex flex-col px-6 py-4 space-y-4 font-sans text-sm tracking-widest uppercase text-center">
+                <a href="#sobre" class="mobile-link py-2 border-b border-lumi-nude/50">Sobre</a>
+                <a href="#servicos" class="mobile-link py-2 border-b border-lumi-nude/50">Especialidades</a>
+                <a href="#portfolio" class="mobile-link py-2 border-b border-lumi-nude/50">Portfólio</a>
+                <a href="#faq" class="mobile-link py-2 border-b border-lumi-nude/50">Dúvidas</a>
+                <!-- 🔄 TROCAR LINK: WhatsApp (Mobile) -->
+                <a href="https://wa.me/5511999999999" target="_blank" class="mobile-link bg-lumi-dark text-lumi-light py-3 mt-2">Agendar Horário</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- 🔄 TROCAR IMAGEM: Fundo Hero Principal -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=2071&auto=format&fit=crop" 
+                 alt="Maquiagem profissional sofisticada" 
+                 class="w-full h-full object-cover object-top opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-r from-lumi-light/90 via-lumi-light/70 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10 flex w-full">
+            <div class="max-w-2xl fade-in-up">
+                <span class="block font-sans text-xs tracking-[0.3em] uppercase text-lumi-gray mb-4">
+                    Beleza com Propósito
+                </span>
+                <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-6">
+                    A arte de revelar a sua <br/>
+                    <span class="italic text-lumi-gray">melhor versão.</span>
+                </h1>
+                <p class="font-sans font-light text-lumi-gray text-lg md:text-xl mb-10 max-w-lg leading-relaxed">
+                    Maquiagem sofisticada, atemporal e sob medida para noivas, eventos e momentos que exigem perfeição em cada detalhe.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- 🔄 TROCAR LINK: WhatsApp Hero -->
+                    <a href="https://wa.me/5511999999999" target="_blank" class="bg-lumi-dark text-lumi-light text-center px-8 py-4 font-sans text-sm tracking-widest uppercase hover:bg-lumi-dark/80 transition-colors">
+                        Solicitar Orçamento
+                    </a>
+                    <a href="#portfolio" class="border border-lumi-dark text-lumi-dark text-center px-8 py-4 font-sans text-sm tracking-widest uppercase hover:bg-lumi-nude/30 transition-colors">
+                        Ver Portfólio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILOSOFIA / SOBRE -->
+    <section id="sobre" class="py-24 md:py-32 bg-lumi-light">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                
+                <!-- Imagem -->
+                <div class="w-full md:w-1/2 fade-in-up">
+                    <div class="relative">
+                        <!-- 🔄 TROCAR IMAGEM: Foto da Maquiadora ou Pincéis -->
+                        <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Pincéis de maquiagem e texturas" 
+                             class="w-full h-[500px] object-cover aspect-[4/5]">
+                        <div class="absolute -bottom-6 -right-6 w-3/4 h-full border-b border-r border-lumi-dark z-[-1]"></div>
+                    </div>
+                </div>
+
+                <!-- Texto -->
+                <div class="w-full md:w-1/2 fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 class="font-serif text-4xl md:text-5xl mb-8">
+                        Não se trata de esconder, <br>
+                        <span class="italic text-lumi-gray">mas de iluminar.</span>
+                    </h2>
+                    <div class="space-y-6 font-sans font-light text-lumi-gray leading-relaxed">
+                        <p>
+                            A maquiagem é uma ferramenta poderosa de expressão. Meu trabalho não segue moldes pré-fabricados ou transformações que apaguem a sua identidade. 
+                        </p>
+                        <p>
+                            Minha assinatura é a <strong class="text-lumi-dark font-normal">beleza construída com técnica, acabamento impecável e respeito aos seus traços</strong>. Seja para o dia do seu casamento, uma formatura ou um editorial de moda, a pele precisa parecer pele, os olhos precisam refletir a sua essência e a durabilidade precisa ser inquestionável.
+                        </p>
+                        <p>
+                            Utilizo apenas produtos de alta performance e técnicas atualizadas internacionalmente para garantir um resultado elegante e confortável durante horas.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Signature_of_John_Hancock.svg/1200px-Signature_of_John_Hancock.svg.png" 
+                             alt="Assinatura" 
+                             class="h-12 opacity-40 mix-blend-multiply filter contrast-200 grayscale">
+                        <!-- 🔄 TROCAR TEXTO: Nome da Profissional -->
+                        <p class="font-sans text-xs tracking-widest uppercase mt-2 font-medium">Nome da Maquiadora</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS / ESPECIALIDADES -->
+    <section id="servicos" class="py-24 bg-lumi-nude/20">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="block font-sans text-xs tracking-[0.3em] uppercase text-lumi-gray mb-3">Atendimento Especializado</span>
+                <h2 class="font-serif text-4xl md:text-5xl">Especialidades</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Serviço 1: Noivas -->
+                <div class="bg-lumi-light p-10 hover:shadow-xl transition-shadow duration-300 fade-in-up flex flex-col h-full border border-transparent hover:border-lumi-nude">
+                    <div class="text-lumi-accent text-3xl mb-6">
+                        <i class="fa-light fa-rings-wedding font-serif italic text-2xl">I</i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-4">Noivas & Casamentos</h3>
+                    <p class="font-sans font-light text-lumi-gray text-sm leading-relaxed mb-8 flex-grow">
+                        Assessoria completa para o seu grande dia. Construção de uma beleza resistente à emoção, suor e luzes, com testes prévios para garantir que você se sinta confiante e deslumbrante do altar à última dança.
+                    </p>
+                    <!-- 🔄 TROCAR LINK: WhatsApp Noivas -->
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20Noiva." target="_blank" class="font-sans text-xs tracking-widest uppercase font-medium border-b border-lumi-dark pb-1 self-start hover:text-lumi-gray transition-colors">
+                        Saber mais
+                    </a>
+                </div>
+
+                <!-- Serviço 2: Social -->
+                <div class="bg-lumi-light p-10 hover:shadow-xl transition-shadow duration-300 fade-in-up flex flex-col h-full border border-transparent hover:border-lumi-nude" style="transition-delay: 0.2s;">
+                    <div class="text-lumi-accent text-3xl mb-6">
+                        <i class="fa-light fa-glass-cheers font-serif italic text-2xl">II</i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-4">Maquiagem Social</h3>
+                    <p class="font-sans font-light text-lumi-gray text-sm leading-relaxed mb-8 flex-grow">
+                        Produções sob medida para formaturas, madrinhas, convidadas e eventos especiais. Técnicas de longa duração e visagismo aplicados para valorizar seus pontos fortes com sofisticação.
+                    </p>
+                    <!-- 🔄 TROCAR LINK: WhatsApp Social -->
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20Maquiagem%20Social." target="_blank" class="font-sans text-xs tracking-widest uppercase font-medium border-b border-lumi-dark pb-1 self-start hover:text-lumi-gray transition-colors">
+                        Saber mais
+                    </a>
+                </div>
+
+                <!-- Serviço 3: Editorial -->
+                <div class="bg-lumi-light p-10 hover:shadow-xl transition-shadow duration-300 fade-in-up flex flex-col h-full border border-transparent hover:border-lumi-nude" style="transition-delay: 0.4s;">
+                    <div class="text-lumi-accent text-3xl mb-6">
+                        <i class="fa-light fa-camera font-serif italic text-2xl">III</i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-4">Ensaios & Editorial</h3>
+                    <p class="font-sans font-light text-lumi-gray text-sm leading-relaxed mb-8 flex-grow">
+                        Beleza pensada especificamente para as lentes da câmera. Compreensão de iluminação, texturas e direção de arte para ensaios fotográficos de moda, retratos corporativos ou gestantes.
+                    </p>
+                    <!-- 🔄 TROCAR LINK: WhatsApp Editorial -->
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20Ensaio/Editorial." target="_blank" class="font-sans text-xs tracking-widest uppercase font-medium border-b border-lumi-dark pb-1 self-start hover:text-lumi-gray transition-colors">
+                        Saber mais
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section id="portfolio" class="py-24 bg-lumi-light">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 fade-in-up">
+                <div>
+                    <span class="block font-sans text-xs tracking-[0.3em] uppercase text-lumi-gray mb-3">Obras & Detalhes</span>
+                    <h2 class="font-serif text-4xl md:text-5xl">Portfólio</h2>
+                </div>
+                <!-- 🔄 TROCAR LINK: Link do Instagram -->
+                <a href="https://instagram.com" target="_blank" class="hidden md:inline-block font-sans text-xs tracking-widest uppercase border-b border-lumi-dark pb-1 hover:text-lumi-gray mt-4 md:mt-0">
+                    Ver mais no Instagram
+                </a>
+            </div>
+
+            <!-- Grid de Imagens -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <!-- 🔄 TROCAR IMAGENS: Fotos do Portfólio -->
+                <div class="gallery-img-container col-span-1 lg:row-span-2 fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop" 
+                         alt="Maquiagem Noiva" 
+                         class="w-full h-full object-cover min-h-[400px] lg:min-h-full">
+                </div>
+                
+                <div class="gallery-img-container col-span-1 fade-in-up" style="transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=2070&auto=format&fit=crop" 
+                         alt="Maquiagem Olhos Detalhe" 
+                         class="w-full h-full object-cover min-h-[300px]">
+                </div>
+
+                <div class="gallery-img-container col-span-1 fade-in-up" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2069&auto=format&fit=crop" 
+                         alt="Maquiagem Editorial" 
+                         class="w-full h-full object-cover min-h-[300px]">
+                </div>
+
+                <div class="gallery-img-container col-span-1 md:col-span-2 fade-in-up" style="transition-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1727&auto=format&fit=crop" 
+                         alt="Preparação Maquiagem" 
+                         class="w-full h-full object-cover min-h-[300px] max-h-[400px]">
+                </div>
+            </div>
+            
+            <!-- Botão Mobile -->
+            <div class="text-center mt-10 md:hidden">
+                <!-- 🔄 TROCAR LINK: Link do Instagram (Mobile) -->
+                <a href="https://instagram.com" target="_blank" class="inline-block border border-lumi-dark px-8 py-3 font-sans text-xs tracking-widest uppercase hover:bg-lumi-dark hover:text-lumi-light transition-colors">
+                    Ver Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-lumi-nude/20">
+        <div class="container mx-auto px-6 md:px-12 max-w-4xl">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="block font-sans text-xs tracking-[0.3em] uppercase text-lumi-gray mb-3">Transparência</span>
+                <h2 class="font-serif text-4xl md:text-5xl">Dúvidas Frequentes</h2>
+            </div>
+
+            <div class="space-y-4 fade-in-up" style="transition-delay: 0.2s;">
+                <!-- Pergunta 1 -->
+                <div class="border-b border-lumi-gray/30">
+                    <button class="faq-btn w-full text-left py-6 flex justify-between items-center focus:outline-none group">
+                        <span class="font-serif text-xl group-hover:text-lumi-gray transition-colors">Com que antecedência devo agendar minha maquiagem?</span>
+                        <span class="text-lumi-accent text-xl transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="pb-6 font-sans font-light text-lumi-gray text-sm leading-relaxed">
+                            Para noivas, recomendo entrar em contato com pelo menos 6 a 8 meses de antecedência para garantir a data. Para eventos sociais (madrinhas, formandas), 2 a 3 meses são ideais, pois a agenda costuma preencher rapidamente, especialmente aos finais de semana.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pergunta 2 -->
+                <div class="border-b border-lumi-gray/30">
+                    <button class="faq-btn w-full text-left py-6 flex justify-between items-center focus:outline-none group">
+                        <span class="font-serif text-xl group-hover:text-lumi-gray transition-colors">Os produtos utilizados são à prova d'água?</span>
+                        <span class="text-lumi-accent text-xl transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="pb-6 font-sans font-light text-lumi-gray text-sm leading-relaxed">
+                            Utilizo técnicas de blindagem e uma seleção criteriosa de produtos de uso profissional e alta performance (marcas importadas e nacionais de ponta). A maquiagem é preparada para ser altamente resistente à água, lágrimas e fricção moderada, garantindo durabilidade por horas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pergunta 3 -->
+                <div class="border-b border-lumi-gray/30">
+                    <button class="faq-btn w-full text-left py-6 flex justify-between items-center focus:outline-none group">
+                        <span class="font-serif text-xl group-hover:text-lumi-gray transition-colors">Você realiza atendimento à domicílio ou em hotel?</span>
+                        <span class="text-lumi-accent text-xl transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="pb-6 font-sans font-light text-lumi-gray text-sm leading-relaxed">
+                            Sim, o atendimento "on location" é minha especialidade para noivas e grupos. Avaliamos a viabilidade de acordo com a distância e a estrutura do local. Valores de deslocamento são calculados separadamente no orçamento.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pergunta 4 -->
+                <div class="border-b border-lumi-gray/30">
+                    <button class="faq-btn w-full text-left py-6 flex justify-between items-center focus:outline-none group">
+                        <span class="font-serif text-xl group-hover:text-lumi-gray transition-colors">Como devo preparar a pele no dia do atendimento?</span>
+                        <span class="text-lumi-accent text-xl transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="pb-6 font-sans font-light text-lumi-gray text-sm leading-relaxed">
+                            O ideal é comparecer com a pele limpa, lavada apenas com seu sabonete facial de costume e sem maquiagem. A preparação completa de pele (limpeza profunda, tonificação e hidratação específica para o seu tipo de pele) já faz parte do meu protocolo de atendimento antes de iniciar a maquiagem.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in-up" style="transition-delay: 0.4s;">
+                <p class="font-sans text-sm text-lumi-gray mb-4">Ainda tem alguma dúvida?</p>
+                <!-- 🔄 TROCAR LINK: WhatsApp FAQ -->
+                <a href="https://wa.me/5511999999999" target="_blank" class="bg-lumi-dark text-lumi-light inline-block px-8 py-3 font-sans text-xs tracking-widest uppercase hover:bg-lumi-gray transition-colors">
+                    Fale Comigo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-lumi-dark text-lumi-light pt-20 pb-10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-lumi-gray/30 pb-16">
+                
+                <!-- Logo & Intro -->
+                <div>
+                    <a href="#" class="font-serif text-3xl tracking-wide font-semibold block mb-6">
+                        LUMINA<span class="text-lumi-accent">.</span>
+                    </a>
+                    <p class="font-sans font-light text-sm text-lumi-light/70 leading-relaxed max-w-xs">
+                        Revelando a beleza autêntica através de técnicas de maquiagem de alta performance e sofisticação.
+                    </p>
+                </div>
+
+                <!-- Contato -->
+                <div>
+                    <h4 class="font-sans text-xs tracking-[0.2em] uppercase mb-6 text-lumi-nude">Contato & Localização</h4>
+                    <ul class="space-y-4 font-sans font-light text-sm text-lumi-light/70">
+                        <!-- 🔄 TROCAR TEXTO: Endereço -->
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span>Atendimento em São Paulo, SP<br>e viagens sob consulta.</span>
+                        </li>
+                        <!-- 🔄 TROCAR LINK/TEXTO: Telefone -->
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/5511999999999" target="_blank" class="hover:text-lumi-light transition-colors">+55 (11) 99999-9999</a>
+                        </li>
+                        <!-- 🔄 TROCAR LINK/TEXTO: E-mail -->
+                        <li class="flex items-center gap-3">
+                            <i class="far fa-envelope"></i>
+                            <a href="mailto:contato@lumina.com.br" class="hover:text-lumi-light transition-colors">contato@lumina.com.br</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div>
+                    <h4 class="font-sans text-xs tracking-[0.2em] uppercase mb-6 text-lumi-nude">Acompanhe</h4>
+                    <div class="flex gap-6">
+                        <!-- 🔄 TROCAR LINKS: Redes Sociais -->
+                        <a href="#" target="_blank" class="text-xl text-lumi-light/70 hover:text-lumi-light hover:-translate-y-1 transition-all duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" class="text-xl text-lumi-light/70 hover:text-lumi-light hover:-translate-y-1 transition-all duration-300" aria-label="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" target="_blank" class="text-xl text-lumi-light/70 hover:text-lumi-light hover:-translate-y-1 transition-all duration-300" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright e Créditos Obrigatórios -->
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-xs text-lumi-light/50 font-light">
+                <p>&copy; <span id="year"></span> Lumina Makeup Artistry. Todos os direitos reservados.</p>
+                
+                <!-- CRÉDITO DO DESENVOLVEDOR -->
+                <p>
+                    Desenvolvido por 
+                    <!-- 🔄 TROCAR LINK: O link para o site da GR Presença Digital -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-lumi-nude hover:text-lumi-light transition-colors underline decoration-lumi-nude/30 underline-offset-4">
+                        GR Presença Digital
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🌟 MARCA D'ÁGUA FLUTUANTE GR PRESENÇA DIGITAL 🌟 -->
+    <div class="fixed bottom-4 left-4 z-[9999] bg-lumi-dark/95 backdrop-blur-sm border border-lumi-accent/30 text-lumi-gray px-4 py-2 rounded-lg shadow-2xl flex items-center gap-2 pointer-events-none transition-all">
+        <i class="fa-solid fa-code text-lumi-accent"></i>
+        <span class="text-xs font-bold uppercase tracking-widest text-lumi-light">Amostra • GR Presença Digital</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configurar ano dinâmico
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // --- 1. Interatividade do Menu Mobile ---
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                menu.classList.toggle('open');
+                if (menu.classList.contains('open')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            if(btn && menu) {
+                btn.addEventListener('click', toggleMenu);
+                
+                // Fechar menu ao clicar em um link
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (menu.classList.contains('open')) toggleMenu();
+                    });
+                });
+            }
+
+            // --- 2. Efeito de Fundo da Navbar no Scroll ---
+            const navbar = document.getElementById('navbar');
+            
+            if(navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('bg-lumi-light/95', 'backdrop-blur-sm', 'shadow-sm', 'py-3');
+                        navbar.classList.remove('bg-transparent', 'py-4');
+                    } else {
+                        navbar.classList.add('bg-transparent', 'py-4');
+                        navbar.classList.remove('bg-lumi-light/95', 'backdrop-blur-sm', 'shadow-sm', 'py-3');
+                    }
+                });
+            }
+
+            // --- 3. Lógica do Acordeão (FAQ) ---
+            const faqBtns = document.querySelectorAll('.faq-btn');
+            
+            faqBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Pega o conteúdo logo após o botão
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('span:last-child');
+                    
+                    // Fecha todos os outros abertos
+                    faqBtns.forEach(otherBtn => {
+                        if (otherBtn !== this) {
+                            otherBtn.nextElementSibling.style.maxHeight = null;
+                            otherBtn.querySelector('span:last-child').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Abre/fecha o clicado
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(45deg)';
+                    }
+                });
+            });
+
+            // --- 4. Animações Reveal on Scroll (Fade-in-up) ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Dispara quando 15% do elemento estiver visível
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                        observer.unobserve(entry.target); // Anima apenas uma vez
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

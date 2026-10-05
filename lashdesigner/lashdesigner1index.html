@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentina Rossi | Eyelash Designer em São Paulo</title>
+    
+    <!-- TAG PARA NÃO INDEXAR NO GOOGLE (Ideal para amostras) -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <meta name="description" content="Estúdio boutique especializado em Extensão de Cílios de alta performance e design autoral em São Paulo.">
+    
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para o ícone da marca d'água -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        studio: {
+                            bg: '#F7F4F0',        /* Areia quente / Clean natural */
+                            surface: '#FFFFFF',   /* Branco puro para respiro */
+                            primary: '#2B2623',   /* Grafite/Chumbo acolhedor */
+                            terracota: '#B87D65', /* Terracota suave e autoral */
+                            accent: '#D4A373',    /* Ocre / Toque orgânico */
+                            muted: '#7A726D'      /* Cinza acastanhado neutro */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F7F4F0;
+            color: #2B2623;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Formas orgânicas customizadas para o estilo Clean Beauty */
+        .organic-shape-1 {
+            border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+        }
+        .organic-shape-2 {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+    </style>
+</head>
+<body class="bg-studio-bg text-studio-primary antialiased selection:bg-studio-terracota selection:text-white">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-studio-bg/90 backdrop-blur-md border-b border-studio-primary/5 transition-all py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#inicio" class="font-serif text-xl tracking-widest uppercase font-semibold text-studio-primary">
+                Valentina <span class="text-studio-terracota italic font-normal">Rossi</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-widest uppercase text-studio-muted">
+                <a href="#inicio" class="hover:text-studio-primary transition-colors">Início</a>
+                <a href="#sobre" class="hover:text-studio-primary transition-colors">Filosofia</a>
+                <a href="#servicos" class="hover:text-studio-primary transition-colors">Especialidades</a>
+                <a href="#curso" class="hover:text-studio-primary transition-colors">Masterclass</a>
+                <a href="#portfolio" class="hover:text-studio-primary transition-colors">Portfólio</a>
+                <a href="#depoimentos" class="hover:text-studio-primary transition-colors">Depoimentos</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <!-- 🔄 TROCAR LINK: WhatsApp (Cabeçalho) -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full bg-studio-primary text-studio-bg text-xs font-semibold tracking-wider uppercase hover:bg-studio-terracota transition-colors shadow-sm">
+                    Agendar Sessão
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center focus:outline-none" aria-label="Abrir Menu">
+                <span class="w-6 h-0.5 bg-studio-primary"></span>
+                <span class="w-6 h-0.5 bg-studio-primary"></span>
+            </button>
+        </div>
+
+        <!-- Mobile menu drawer -->
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-studio-surface border-b border-studio-primary/10 shadow-lg py-6 px-8 flex flex-col gap-4 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 md:hidden">
+            <a href="#inicio" class="mob-link text-sm uppercase tracking-wider py-2">Início</a>
+            <a href="#sobre" class="mob-link text-sm uppercase tracking-wider py-2">Filosofia</a>
+            <a href="#servicos" class="mob-link text-sm uppercase tracking-wider py-2">Especialidades</a>
+            <a href="#curso" class="mob-link text-sm uppercase tracking-wider py-2">Masterclass</a>
+            <a href="#portfolio" class="mob-link text-sm uppercase tracking-wider py-2">Portfólio</a>
+            <a href="#depoimentos" class="mob-link text-sm uppercase tracking-wider py-2">Depoimentos</a>
+            <!-- 🔄 TROCAR LINK: WhatsApp (Mobile) -->
+            <a href="https://wa.me/5511999999999" target="_blank" class="w-full py-3 text-center bg-studio-primary text-white text-xs uppercase tracking-widest rounded-full mt-2">Agendar Sessão</a>
+        </div>
+    </header>
+
+    <section id="inicio" class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <span class="inline-block text-xs uppercase tracking-[0.2em] font-semibold text-studio-terracota bg-studio-terracota/10 px-4 py-1.5 rounded-full">
+                    Studio Boutique • São Paulo
+                </span>
+                <h1 class="font-serif text-5xl lg:text-7xl font-normal leading-tight text-studio-primary">
+                    A leveza de um <span class="italic text-studio-terracota">olhar</span> perfeitamente desenhado.
+                </h1>
+                <p class="text-studio-muted text-base lg:text-lg font-light max-w-xl leading-relaxed">
+                    Especialista em extensão de cílios com foco em simetria facial, isolamento impecável e preservação absoluta da saúde dos seus fios naturais.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <!-- 🔄 TROCAR LINK: WhatsApp (Botão Principal) -->
+                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-full bg-studio-terracota text-white text-xs font-semibold uppercase tracking-widest hover:bg-studio-primary transition-all text-center shadow-md">
+                        Agendar Atendimento
+                    </a>
+                    <a href="#servicos" class="px-8 py-4 rounded-full border border-studio-primary/20 text-studio-primary text-xs font-semibold uppercase tracking-widest hover:bg-studio-primary hover:text-white transition-all text-center">
+                        Explorar Técnicas
+                    </a>
+                </div>
+            </div>
+
+            <!-- Espaço demarcado para foto da profissional (Hero) -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                <div class="relative w-full max-w-sm aspect-[4/5] organic-shape-1 overflow-hidden shadow-2xl bg-studio-surface border border-studio-primary/10">
+                    <!-- 🔄 TROCAR IMAGEM: Foto Hero Principal -->
+                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=900&auto=format&fit=crop" 
+                         alt="Foto Principal da Profissional" 
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://placehold.co/600x750/F7F4F0/B87D65?text=Foto+Principal+da+Profissional';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-24 bg-studio-surface border-y border-studio-primary/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md aspect-square organic-shape-2 overflow-hidden shadow-xl bg-studio-bg border border-studio-primary/10">
+                    <!-- 🔄 TROCAR IMAGEM: Foto Seção Sobre -->
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop" 
+                         alt="Valentina Rossi" 
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://placehold.co/600x750/F7F4F0/2B2623?text=Foto+Sobre+da+Profissional';">
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6">
+                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-studio-terracota">Filosofia & Atendimento</span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-normal text-studio-primary leading-snug">
+                    Beleza consciente, durabilidade e conforto em cada detalhe.
+                </h2>
+                <!-- 🔄 TROCAR TEXTO: História/Apresentação -->
+                <p class="text-studio-muted text-base font-light leading-relaxed">
+                    Meu trabalho une técnica avançada e sensibilidade estética. Acredito que a extensão de cílios não deve apenas embelezar, mas proporcionar uma experiência de autocuidado relaxante e sofisticada.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-studio-primary/10">
+                    <div>
+                        <div class="font-serif text-3xl font-medium text-studio-terracota">+1.500</div>
+                        <div class="text-xs uppercase tracking-wider text-studio-muted mt-1">Olhares Transformados</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-3xl font-medium text-studio-terracota">100%</div>
+                        <div class="text-xs uppercase tracking-wider text-studio-muted mt-1">Fios Protegidos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-[0.2em] font-semibold text-studio-terracota">Menu Exclusivo</span>
+            <h2 class="font-serif text-4xl lg:text-5xl font-normal text-studio-primary mt-2">Nossas Especialidades</h2>
+            <p class="text-studio-muted text-sm mt-3 font-light">Técnicas personalizadas segundo o visagismo do seu rosto.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-studio-surface p-8 rounded-2xl border border-studio-primary/5 shadow-sm hover:border-studio-terracota/40 transition-all flex flex-col justify-between">
+                <div>
+                    <h3 class="font-serif text-2xl font-normal text-studio-primary mb-3">Extensão Fox Eyes</h3>
+                    <p class="text-studio-muted text-sm font-light leading-relaxed mb-6">Efeito delineado e sofisticado que alonga o canto externo dos olhos com extrema elegância.</p>
+                </div>
+                <!-- 🔄 TROCAR LINK: WhatsApp Fox Eyes -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20Fox%20Eyes." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-widest text-studio-terracota hover:text-studio-primary transition-colors">
+                    Agendar Sessão &rarr;
+                </a>
+            </div>
+
+            <div class="bg-studio-surface p-8 rounded-2xl border border-studio-primary/5 shadow-sm hover:border-studio-terracota/40 transition-all flex flex-col justify-between">
+                <div>
+                    <h3 class="font-serif text-2xl font-normal text-studio-primary mb-3">Volume Brasileiro</h3>
+                    <p class="text-studio-muted text-sm font-light leading-relaxed mb-6">Fios em Y que proporcionam excelente preenchimento, leveza e durabilidade incomparável.</p>
+                </div>
+                <!-- 🔄 TROCAR LINK: WhatsApp Volume Brasileiro -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20Volume%20Brasileiro." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-widest text-studio-terracota hover:text-studio-primary transition-colors">
+                    Agendar Sessão &rarr;
+                </a>
+            </div>
+
+            <div class="bg-studio-surface p-8 rounded-2xl border border-studio-primary/5 shadow-sm hover:border-studio-terracota/40 transition-all flex flex-col justify-between">
+                <div>
+                    <h3 class="font-serif text-2xl font-normal text-studio-primary mb-3">Volume Europeu</h3>
+                    <p class="text-studio-muted text-sm font-light leading-relaxed mb-6">Densidade máxima com acabamento em leques artesanais para um olhar marcante e glamouroso.</p>
+                </div>
+                <!-- 🔄 TROCAR LINK: WhatsApp Volume Europeu -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20Volume%20Europeu." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-widest text-studio-terracota hover:text-studio-primary transition-colors">
+                    Agendar Sessão &rarr;
+                </a>
+            </div>
+
+            <div class="bg-studio-surface p-8 rounded-2xl border border-studio-primary/5 shadow-sm hover:border-studio-terracota/40 transition-all flex flex-col justify-between">
+                <div>
+                    <h3 class="font-serif text-2xl font-normal text-studio-primary mb-3">Volume Inglês</h3>
+                    <p class="text-studio-muted text-sm font-light leading-relaxed mb-6">Textura moderna e acabamento em camadas que valorizam a curvatura natural dos fios.</p>
+                </div>
+                <!-- 🔄 TROCAR LINK: WhatsApp Volume Inglês -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20Volume%20Inglês." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-widest text-studio-terracota hover:text-studio-primary transition-colors">
+                    Agendar Sessão &rarr;
+                </a>
+            </div>
+
+            <div class="bg-studio-surface p-8 rounded-2xl border border-studio-primary/5 shadow-sm hover:border-studio-terracota/40 transition-all flex flex-col justify-between">
+                <div>
+                    <h3 class="font-serif text-2xl font-normal text-studio-primary mb-3">Efeito Sirena</h3>
+                    <p class="text-studio-muted text-sm font-light leading-relaxed mb-6">Design ousado com leves pontos de destaque que hipnotizam em qualquer ocasião.</p>
+                </div>
+                <!-- 🔄 TROCAR LINK: WhatsApp Efeito Sirena -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20Efeito%20Sirena." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-widest text-studio-terracota hover:text-studio-primary transition-colors">
+                    Agendar Sessão &rarr;
+                </a>
+            </div>
+
+            <div class="bg-studio-surface p-8 rounded-2xl border border-studio-primary/5 shadow-sm hover:border-studio-terracota/40 transition-all flex flex-col justify-between">
+                <div>
+                    <h3 class="font-serif text-2xl font-normal text-studio-primary mb-3">Design com Henna</h3>
+                    <p class="text-studio-muted text-sm font-light leading-relaxed mb-6">Mapeamento facial completo com visagismo para sobrancelhas harmonizadas com seu olhar.</p>
+                </div>
+                <!-- 🔄 TROCAR LINK: WhatsApp Henna -->
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20Design%20com%20Henna." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-widest text-studio-terracota hover:text-studio-primary transition-colors">
+                    Agendar Sessão &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="curso" class="py-24 bg-studio-primary text-studio-bg">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <span class="text-xs uppercase tracking-[0.2em] font-semibold text-studio-terracota">Formação Profissional</span>
+            <h2 class="font-serif text-4xl lg:text-5xl font-normal">Curso de Extensão de Cílios para Iniciantes</h2>
+            <p class="text-gray-300 text-base font-light max-w-2xl mx-auto leading-relaxed">
+                Aprenda do zero a realizar procedimentos de extensão de cílios com segurança, técnica e confiança absoluta!
+            </p>
+
+            <div class="bg-white/5 border border-studio-terracota/30 rounded-2xl p-8 lg:p-12 text-left space-y-4 backdrop-blur-sm">
+                <h3 class="font-serif text-2xl text-studio-terracota text-center mb-6">Conteúdo Programático</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-200 font-light">
+                    <div class="flex items-center gap-3">✓ Preparação e cuidados com os cílios naturais.</div>
+                    <div class="flex items-center gap-3">✓ Aplicação e isolamento correto dos fios.</div>
+                    <div class="flex items-center gap-3">✓ Domínio da técnica Fio a Fio clássica.</div>
+                    <div class="flex items-center gap-3">✓ Mapeamento e acabamento profissional.</div>
+                    <div class="flex items-center gap-3 md:col-span-2">✓ Cuidados com a retenção e manutenção.</div>
+                </div>
+                <div class="pt-6 border-t border-white/10 text-center">
+                    <p class="text-studio-terracota text-xs uppercase tracking-widest font-semibold">Curso Presencial com Apostila - Certificado e Suporte Pós-curso.</p>
+                </div>
+            </div>
+
+            <!-- 🔄 TROCAR LINK: WhatsApp Masterclass -->
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20curso." target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-4 rounded-full bg-studio-terracota text-white text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-studio-primary transition-all">
+                Garantir Minha Vaga
+            </a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-[0.2em] font-semibold text-studio-terracota">Galeria Visual</span>
+            <h2 class="font-serif text-4xl lg:text-5xl font-normal text-studio-primary mt-2">Antes & Depois</h2>
+            <p class="text-studio-muted text-sm mt-3 font-light">O padrão de acabamento e harmonia que você vai amar.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 🔄 TROCAR IMAGENS: Fotos do Portfólio (De 1 a 6) -->
+            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-studio-surface border border-studio-primary/10 shadow-sm group">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" alt="Trabalho 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x750/F7F4F0/B87D65?text=Foto+Portfólio+1';">
+            </div>
+            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-studio-surface border border-studio-primary/10 shadow-sm group">
+                <img src="https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?q=80&w=800&auto=format&fit=crop" alt="Trabalho 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x750/F7F4F0/B87D65?text=Foto+Portfólio+2';">
+            </div>
+            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-studio-surface border border-studio-primary/10 shadow-sm group">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop" alt="Trabalho 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x750/F7F4F0/B87D65?text=Foto+Portfólio+3';">
+            </div>
+            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-studio-surface border border-studio-primary/10 shadow-sm group">
+                <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800&auto=format&fit=crop" alt="Trabalho 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x750/F7F4F0/B87D65?text=Foto+Portfólio+4';">
+            </div>
+            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-studio-surface border border-studio-primary/10 shadow-sm group">
+                <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=800&auto=format&fit=crop" alt="Trabalho 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x750/F7F4F0/B87D65?text=Foto+Portfólio+5';">
+            </div>
+            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-studio-surface border border-studio-primary/10 shadow-sm group">
+                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop" alt="Trabalho 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x750/F7F4F0/B87D65?text=Foto+Portfólio+6';">
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-24 bg-studio-surface border-y border-studio-primary/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-studio-terracota">Depoimentos</span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-normal text-studio-primary mt-2">O que dizem nossas clientes</h2>
+            </div>
+
+            <!-- 🔄 TROCAR TEXTOS: Depoimentos e Nomes reais de clientes -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-xl bg-studio-bg border border-studio-primary/5 flex flex-col justify-between">
+                    <p class="text-studio-muted text-xs italic leading-relaxed mb-4">"O trabalho da Valentina é impecável! Meus cílios duram semanas intactos e o atendimento é de uma delicadeza sem igual."</p>
+                    <div class="pt-4 border-t border-studio-primary/10 font-semibold text-xs text-studio-primary">Mariana Souza</div>
+                </div>
+                <div class="p-6 rounded-xl bg-studio-bg border border-studio-primary/5 flex flex-col justify-between">
+                    <p class="text-studio-muted text-xs italic leading-relaxed mb-4">"Estúdio super aconchegante e limpo. A técnica Fox Eyes mudou meu olhar por completo. Recomendo de olhos fechados!"</p>
+                    <div class="pt-4 border-t border-studio-primary/10 font-semibold text-xs text-studio-primary">Camila Ribeiro</div>
+                </div>
+                <div class="p-6 rounded-xl bg-studio-bg border border-studio-primary/5 flex flex-col justify-between">
+                    <p class="text-studio-muted text-xs italic leading-relaxed mb-4">"Fiz o curso com a Valentina e foi o melhor investimento profissional da minha vida. Didática incrível!"</p>
+                    <div class="pt-4 border-t border-studio-primary/10 font-semibold text-xs text-studio-primary">Beatriz Lima</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-studio-primary text-studio-bg py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
+            <div>
+                <span class="font-serif text-2xl tracking-wider uppercase font-semibold text-white">Valentina Rossi</span>
+                <!-- 🔄 TROCAR TEXTO: Cidade/Serviço -->
+                <p class="text-gray-400 text-xs mt-2 font-light">Eyelash Studio & Academy • São Paulo - SP</p>
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+                <span class="text-xs uppercase tracking-widest text-studio-terracota font-semibold">Instagram</span>
+                <!-- 🔄 TROCAR LINK: Link para o Instagram do estúdio -->
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-studio-terracota transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+
+            <div class="text-center md:text-right space-y-2">
+                <p class="text-gray-400 text-xs">© <span id="year"></span> Valentina Rossi. Todos os direitos reservados.</p>
+                <p class="text-gray-500 text-[11px]">
+                    Desenvolvido por 
+                    <!-- 🔄 TROCAR LINK: O link para o site da GR Presença Digital -->
+                    <a href="#" target="_blank" class="text-studio-terracota font-semibold hover:underline">GR Presença Digital</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🌟 MARCA D'ÁGUA FLUTUANTE GR PRESENÇA DIGITAL 🌟 -->
+    <div class="fixed bottom-4 left-4 z-[9999] bg-studio-primary/95 backdrop-blur-sm border border-studio-terracota/30 text-studio-muted px-4 py-2 rounded-lg shadow-2xl flex items-center gap-2 pointer-events-none transition-all">
+        <i class="fa-solid fa-code text-studio-terracota"></i>
+        <span class="text-xs font-bold uppercase tracking-widest text-white">Amostra • GR Presença Digital</span>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobLinks = document.querySelectorAll('.mob-link');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('-translate-y-full');
+                    mobileMenu.classList.toggle('opacity-0');
+                    mobileMenu.classList.toggle('pointer-events-none');
+                });
+                mobLinks.forEach(l => l.addEventListener('click', () => {
+                    mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                }));
+            }
+
+            // Smooth scroll fixo e seguro
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.length > 1) {
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            const topPos = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                            window.scrollTo({ top: topPos, behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

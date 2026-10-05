@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- TAG PARA NÃO INDEXAR NO GOOGLE (Ideal para amostras) -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Barbearia Premium | Excelência em Grooming</title>
+    <meta name="description" content="Sua barbearia premium. Cortes precisos, barboterapia e uma experiência de excelência em cuidados masculinos.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração Customizada do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#09090b',
+                            card: '#18181b',
+                            accent: '#d97706',
+                            accentHover: '#b45309'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090b;
+            color: #d4d4d8; 
+        }
+        .glass-nav {
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .bg-overlay {
+            background: linear-gradient(to bottom, rgba(9, 9, 11, 0.4), rgba(9, 9, 11, 1));
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3f3f46; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706; 
+        }
+        .gallery-img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- NAVEGAÇÃO -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-heading text-2xl font-bold tracking-wider text-white uppercase flex items-center gap-2">
+                        <i class="fa-solid fa-scissors text-brand-accent"></i>
+                        Vanguard<span class="text-brand-accent">.</span>
+                    </a>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#sobre" class="text-sm font-medium text-zinc-300 hover:text-brand-accent transition-colors">A Experiência</a>
+                    <a href="#servicos" class="text-sm font-medium text-zinc-300 hover:text-brand-accent transition-colors">Serviços</a>
+                    <a href="#portfolio" class="text-sm font-medium text-zinc-300 hover:text-brand-accent transition-colors">Portfólio</a>
+                    <a href="#contato" class="text-sm font-medium text-zinc-300 hover:text-brand-accent transition-colors">Contato</a>
+                </nav>
+
+                <!-- CTA Desktop -->
+                <div class="hidden md:flex">
+                    <!-- 🔄 TROCAR LINK: Substituir "#" pelo link do WhatsApp da barbearia -->
+                    <a href="#" target="_blank" class="bg-brand-accent hover:bg-brand-accentHover text-white px-6 py-2.5 text-sm font-medium tracking-wide uppercase transition-all duration-300 flex items-center gap-2">
+                        Agendar Horário
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-zinc-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-zinc-800">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#sobre" class="block px-3 py-3 text-base font-medium text-zinc-300 hover:text-brand-accent hover:bg-zinc-800/50">A Experiência</a>
+                <a href="#servicos" class="block px-3 py-3 text-base font-medium text-zinc-300 hover:text-brand-accent hover:bg-zinc-800/50">Serviços</a>
+                <a href="#portfolio" class="block px-3 py-3 text-base font-medium text-zinc-300 hover:text-brand-accent hover:bg-zinc-800/50">Portfólio</a>
+                <a href="#contato" class="block px-3 py-3 text-base font-medium text-zinc-300 hover:text-brand-accent hover:bg-zinc-800/50">Contato</a>
+                <!-- 🔄 TROCAR LINK: WhatsApp Mobile -->
+                <a href="#" class="block w-full mt-4 bg-brand-accent text-white text-center px-4 py-3 text-base font-medium uppercase tracking-wider">Agendar Agora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center pt-20">
+        <!-- 🔄 TROCAR IMAGEM: URL do fundo principal da Barbearia -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Interior da Barbearia" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="block text-brand-accent font-medium tracking-[0.2em] uppercase text-sm mb-4">Grooming de Alta Performance</span>
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-tight mb-6 leading-tight">
+                Seu Estilo.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-yellow-600">Nossa Assinatura.</span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-10 font-light">
+                Muito mais que um corte. Entregamos precisão, técnica e uma experiência de cuidado masculino projetada para homens exigentes.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <!-- 🔄 TROCAR LINK: WhatsApp -->
+                <a href="#" class="bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 flex items-center justify-center gap-3">
+                    Agendar Horário <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#servicos" class="border border-zinc-600 hover:border-brand-accent hover:text-brand-accent text-white px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300">
+                    Conhecer Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE / A EXPERIÊNCIA -->
+    <section id="sobre" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="relative">
+                    <div class="absolute -inset-4 border border-zinc-800 transform translate-x-4 translate-y-4"></div>
+                    <!-- 🔄 TROCAR IMAGEM: Foto do Barbeiro ou do salão -->
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barbeiro executando corte preciso" class="relative z-10 w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                    
+                    <div class="absolute -bottom-6 -right-6 z-20 bg-brand-card p-6 border border-zinc-800 flex items-center gap-4">
+                        <span class="font-heading text-5xl font-bold text-brand-accent">10</span>
+                        <div class="text-sm uppercase tracking-wider text-zinc-400 font-medium leading-tight">Anos de<br>Maestria</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-white uppercase tracking-tight mb-6">
+                        O Padrão <br>Vanguard
+                    </h2>
+                    <div class="w-16 h-1 bg-brand-accent mb-8"></div>
+                    
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-6">
+                        Não acreditamos em cortes em série. Na Vanguard, cada cliente é único e cada atendimento é uma consultoria de imagem. Combinamos as técnicas clássicas da barbearia tradicional com tendências contemporâneas.
+                    </p>
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                        Nosso ambiente foi desenhado para ser o seu refúgio. Relaxe com uma bebida premium, aprecie boa música e deixe sua imagem nas mãos de especialistas dedicados à perfeição dos detalhes.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-zinc-300">
+                            <i class="fa-solid fa-check text-brand-accent"></i> Consultoria de visagismo
+                        </li>
+                        <li class="flex items-center gap-3 text-zinc-300">
+                            <i class="fa-solid fa-check text-brand-accent"></i> Produtos de alta performance
+                        </li>
+                        <li class="flex items-center gap-3 text-zinc-300">
+                            <i class="fa-solid fa-check text-brand-accent"></i> Atendimento pontual e exclusivo
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-24 bg-brand-card border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-accent tracking-[0.2em] uppercase text-sm font-medium">Nosso Menu</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white uppercase tracking-tight mt-2">Serviços Premium</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 🔄 TROCAR TEXTOS: Substituir valores e nomes dos serviços conforme o cliente -->
+                
+                <div class="bg-brand-dark p-8 border border-zinc-800 hover:border-brand-accent transition-colors duration-300 group">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center mb-6 text-brand-accent text-2xl group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="font-heading text-xl font-bold text-white uppercase">Corte Vanguard</h3>
+                        <span class="text-brand-accent font-medium text-lg">R$ 70</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                        Consultoria de estilo, lavagem relaxante, corte executado com tesoura/máquina, acabamento impecável e finalização com pomada premium.
+                    </p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider"><i class="fa-regular fa-clock mr-1"></i> 45 MIN</span>
+                </div>
+
+                <div class="bg-brand-dark p-8 border border-zinc-800 hover:border-brand-accent transition-colors duration-300 group">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center mb-6 text-brand-accent text-2xl group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-spray-can"></i>
+                    </div>
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="font-heading text-xl font-bold text-white uppercase">Barboterapia</h3>
+                        <span class="text-brand-accent font-medium text-lg">R$ 50</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                        Ritual tradicional com toalha quente, massagem facial, espumas hidratantes, alinhamento dos fios e navalha suave para um contorno perfeito.
+                    </p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider"><i class="fa-regular fa-clock mr-1"></i> 30 MIN</span>
+                </div>
+
+                <div class="bg-brand-dark p-8 border border-zinc-800 hover:border-brand-accent transition-colors duration-300 group">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center mb-6 text-brand-accent text-2xl group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="font-heading text-xl font-bold text-white uppercase">Combo Master</h3>
+                        <span class="text-brand-accent font-medium text-lg">R$ 110</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                        A experiência completa. Corte Vanguard + Barboterapia Clássica. Saia pronto e revigorado para qualquer compromisso.
+                    </p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider"><i class="fa-regular fa-clock mr-1"></i> 1H 15 MIN</span>
+                </div>
+
+                <div class="bg-brand-dark p-8 border border-zinc-800 hover:border-brand-accent transition-colors duration-300 group">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center mb-6 text-brand-accent text-2xl group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="font-heading text-xl font-bold text-white uppercase">Limpeza Facial</h3>
+                        <span class="text-brand-accent font-medium text-lg">R$ 80</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                        Limpeza profunda de pele adaptada para a derme masculina. Remoção de cravos, esfoliação e hidratação com máscara de argila negra.
+                    </p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider"><i class="fa-regular fa-clock mr-1"></i> 40 MIN</span>
+                </div>
+
+                <div class="bg-brand-dark p-8 border border-zinc-800 hover:border-brand-accent transition-colors duration-300 group">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center mb-6 text-brand-accent text-2xl group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="font-heading text-xl font-bold text-white uppercase">Camuflagem</h3>
+                        <span class="text-brand-accent font-medium text-lg">R$ 60</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                        Técnica sutil e natural para disfarçar fios brancos no cabelo ou preencher falhas na barba, devolvendo uma aparência jovem sem aspecto artificial.
+                    </p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider"><i class="fa-regular fa-clock mr-1"></i> 30 MIN</span>
+                </div>
+
+                <!-- Agendamento Card -->
+                <div class="bg-gradient-to-br from-brand-accent to-yellow-700 p-8 flex flex-col justify-center items-center text-center group">
+                    <h3 class="font-heading text-2xl font-bold text-white uppercase mb-4">Pronto para elevar seu estilo?</h3>
+                    <p class="text-white/90 text-sm mb-6">Garantimos um horário exclusivo para você.</p>
+                    <!-- 🔄 TROCAR LINK: WhatsApp -->
+                    <a href="#" class="bg-white text-brand-accent hover:bg-zinc-100 px-6 py-3 font-bold uppercase tracking-wider text-sm transition-colors w-full">
+                        Agendar Agora
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFÓLIO VISUAL -->
+    <section id="portfolio" class="py-24 bg-brand-dark">
+        <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-accent tracking-[0.2em] uppercase text-sm font-medium">Nosso Trabalho</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white uppercase tracking-tight mt-2">A Arte no Detalhe</h2>
+                <p class="text-zinc-400 mt-4 max-w-2xl mx-auto">Resultados reais de clientes que confiam em nossa assinatura.</p>
+            </div>
+
+            <!-- Grid de Imagens -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- 🔄 TROCAR IMAGENS: Fotos reais do portfólio da barbearia -->
+                <div class="gallery-item relative overflow-hidden aspect-[4/5] bg-zinc-900 group">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Corte Fade Masculino" class="gallery-img w-full h-full object-cover grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-heading tracking-widest uppercase">Mid Fade</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden aspect-[4/5] bg-zinc-900 group">
+                    <img src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design de Barba" class="gallery-img w-full h-full object-cover grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-heading tracking-widest uppercase">Barba Lenhador</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden aspect-[4/5] bg-zinc-900 group">
+                    <img src="https://images.unsplash.com/photo-1512805904576-905186b5daec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Corte Clássico" class="gallery-img w-full h-full object-cover grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-heading tracking-widest uppercase">Pompadour Clássico</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden aspect-[4/5] bg-zinc-900 group">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Corte Moderno" class="gallery-img w-full h-full object-cover grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-heading tracking-widest uppercase">Texturizado Moderno</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <!-- 🔄 TROCAR LINK: Instagram do Cliente -->
+                <a href="#" target="_blank" class="inline-flex items-center gap-2 text-zinc-300 hover:text-brand-accent transition-colors font-medium uppercase tracking-widest text-sm border-b border-zinc-700 hover:border-brand-accent pb-1">
+                    Ver mais no Instagram <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES & CONTATO -->
+    <section id="contato" class="py-24 bg-brand-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <div>
+                    <span class="text-brand-accent tracking-[0.2em] uppercase text-sm font-medium">Visite-nos</span>
+                    <h2 class="font-heading text-4xl font-bold text-white uppercase tracking-tight mt-2 mb-8">Sua nova casa.</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-zinc-800 flex items-center justify-center flex-shrink-0 text-brand-accent">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-wider mb-1">Endereço</h4>
+                                <!-- 🔄 TROCAR TEXTO: Endereço Real do Cliente -->
+                                <p class="text-zinc-400 text-sm">Av. Brasil, 1500 - Bairro Savassi<br>Belo Horizonte - MG, 30140-001</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-zinc-800 flex items-center justify-center flex-shrink-0 text-brand-accent">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-wider mb-1">Horário de Funcionamento</h4>
+                                <!-- 🔄 TROCAR TEXTO: Horários Reais -->
+                                <p class="text-zinc-400 text-sm">Terça a Sexta: 09h às 20h<br>Sábado: 09h às 18h<br>Domingo e Segunda: Fechado</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-zinc-800 flex items-center justify-center flex-shrink-0 text-brand-accent">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-wider mb-1">Agendamentos</h4>
+                                <!-- 🔄 TROCAR TEXTO: Número Real -->
+                                <p class="text-zinc-400 text-sm">(31) 99999-9999</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <!-- 🔄 TROCAR LINK: WhatsApp da barbearia -->
+                        <a href="#" class="bg-white hover:bg-zinc-200 text-brand-dark px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] transition-all duration-300 inline-flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative h-[400px] lg:h-full min-h-[400px] w-full bg-zinc-800 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500 border border-zinc-700">
+                    <!-- 🔄 TROCAR LINK: iframe do Google Maps do endereço real do cliente -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120042.84277490074!2d-44.05374661730055!3d-19.90254133481079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa690cacacf2c33%3A0x5b35795e3ad23997!2sBelo%20Horizonte%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1716301234567!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark border-t border-zinc-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <a href="#" class="font-heading text-2xl font-bold tracking-wider text-white uppercase flex items-center gap-2 mb-6 md:mb-0">
+                    <i class="fa-solid fa-scissors text-brand-accent"></i>
+                    Vanguard<span class="text-brand-accent">.</span>
+                </a>
+                
+                <div class="flex space-x-6">
+                    <!-- 🔄 TROCAR LINKS: Links reais das redes sociais -->
+                    <a href="#" class="text-zinc-500 hover:text-white transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-zinc-500 hover:text-white transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="text-zinc-500 hover:text-white transition-colors text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-zinc-600 text-xs text-center md:text-left">
+                    &copy; <span id="year"></span> Vanguard Barbearia. Todos os direitos reservados.
+                </p>
+                
+                <p class="text-zinc-600 text-xs text-center md:text-right">
+                    Desenvolvido por 
+                    <!-- 🔄 TROCAR LINK: Link para o seu WhatsApp/Site no rodapé -->
+                    <a href="#" target="_blank" class="text-zinc-400 hover:text-brand-accent transition-colors font-medium">
+                        GR Presença Digital
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🌟 MARCA D'ÁGUA FLUTUANTE GR PRESENÇA DIGITAL (Para evitar cópias da amostra) 🌟 -->
+    <div class="fixed bottom-4 left-4 z-[9999] bg-brand-dark/95 backdrop-blur-sm border border-zinc-800 text-zinc-400 px-4 py-2 rounded-lg shadow-2xl flex items-center gap-2 pointer-events-none transition-all">
+        <i class="fa-solid fa-code text-brand-accent"></i>
+        <span class="text-xs font-bold uppercase tracking-widest text-white">Amostra • GR Presença Digital</span>
+    </div>
+
+    <!-- Scripts Funcionais -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+                header.style.backgroundColor = 'rgba(9, 9, 11, 0.95)';
+            } else {
+                header.classList.remove('shadow-lg');
+                header.style.backgroundColor = 'rgba(9, 9, 11, 0.85)';
+            }
+        });
+    </script>
+</body>
+</html>
